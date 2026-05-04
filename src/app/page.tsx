@@ -5,7 +5,7 @@ import {
   TrendingUp, Award, ChevronRight, Phone, Map, Scale, BookOpen, UserCheck,
   Activity, Presentation, Flame, PlaySquare, Mic2, Tv2, Star, Megaphone,
   Briefcase, BarChart, Handshake, Info, Layers, Crosshair, Crown, Maximize2, Layout,
-  Zap, MonitorPlay, Speaker, Leaf, Flag, Building
+  Zap, MonitorPlay, Speaker, Leaf, Flag, Building, Settings, Store
 } from "lucide-react";
 
 const PrintPage = ({ children, className = "" }: { children: ReactNode; className?: string }) => (
@@ -21,7 +21,9 @@ const PageHeader = ({ title, chapter }: { title: string, chapter: string }) => (
   </header>
 );
 
-const FormalTitle = ({ title, icon: Icon }: { title: string, icon: any }) => (
+import React from 'react';
+
+const FormalTitle = ({ title, icon: Icon }: { title: string, icon: React.ElementType }) => (
   <div className="flex items-center gap-3 mb-6">
     <div className="p-2 bg-gradient-to-br from-emerald-500 to-green-700 rounded-lg shadow-sm">
       <Icon className="text-white w-5 h-5" />
@@ -72,8 +74,13 @@ export default function Proposal() {
                 />
               </div>
             </div>
-            <div className="inline-block px-8 py-3 bg-slate-900/80 backdrop-blur-md text-white rounded-full mt-4 shadow-[0_0_20px_rgba(0,0,0,0.5)] border border-amber-500/50">
-              <p className="text-lg font-medium italic text-amber-400 drop-shadow-md">"Unleash The Champion Within"</p>
+            <div className="inline-block relative group mt-6">
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-amber-400 rounded-full blur-md opacity-40 group-hover:opacity-70 transition-opacity duration-500"></div>
+              <div className="relative px-10 py-3.5 bg-slate-900 border border-amber-500/50 rounded-full flex items-center justify-center shadow-[inset_0_0_20px_rgba(245,158,11,0.1)]">
+                <p className="text-xl font-bold italic tracking-wide bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent drop-shadow-sm">
+                  &quot;Unleash The Champion Within&quot;
+                </p>
+              </div>
             </div>
           </div>
           
@@ -115,7 +122,7 @@ export default function Proposal() {
             />
           </div>
 
-          <div className="text-sm text-slate-700 text-justify leading-relaxed space-y-6">
+          <div className="text-sm text-slate-700 text-left leading-relaxed space-y-6">
             <p>
               Logo <strong className="text-emerald-800">Clash of Champions: Sukabumi Showdown</strong> dirancang dengan perpaduan elemen <em>esports</em> modern dan nilai-nilai kearifan lokal Pasundan. Didominasi oleh warna <strong>Hijau dan Emas</strong>, setiap elemen di dalamnya memiliki makna luhur yang mendalam:
             </p>
@@ -139,7 +146,7 @@ export default function Proposal() {
                 <h4 className="text-emerald-700 font-bold mb-2 flex items-center gap-2">
                   <Leaf className="w-4 h-4 text-green-600" /> Untaian Padi & Bunga
                 </h4>
-                <p className="text-xs text-slate-600">Terinspirasi dari falsafah "ilmu padi", menyimbolkan kesejahteraan dan kerendahan hati. Semakin tinggi mekanik dan <em>skill</em> seorang atlet, semakin merunduk dan menghargai lawan-lawannya.</p>
+                <p className="text-xs text-slate-600">Terinspirasi dari falsafah &quot;ilmu padi&quot;, menyimbolkan kesejahteraan dan kerendahan hati. Semakin tinggi mekanik dan <em>skill</em> seorang atlet, semakin merunduk dan menghargai lawan-lawannya.</p>
               </div>
 
               <div className="bg-emerald-50/50 p-5 rounded-xl border border-emerald-100 shadow-sm">
@@ -152,7 +159,7 @@ export default function Proposal() {
             
             <div className="mt-10 p-4 border-l-4 border-emerald-600 bg-emerald-50 rounded-r-lg shadow-sm">
               <p className="italic text-sm text-emerald-800 font-medium">
-                "Lebih dari sekadar identitas visual, logo ini adalah panji kehormatan yang menyatukan semangat juang esports dengan jiwa ksatria masyarakat Sukabumi."
+                &quot;Lebih dari sekadar identitas visual, logo ini adalah panji kehormatan yang menyatukan semangat juang esports dengan jiwa ksatria masyarakat Sukabumi.&quot;
               </p>
             </div>
           </div>
@@ -206,10 +213,10 @@ export default function Proposal() {
           <FormalTitle title="Latar Belakang" icon={Layers} />
           <div className="prose prose-slate max-w-none text-sm text-slate-700 text-justify leading-relaxed">
             <p>
-              Menyikapi urgensi pembinaan talenta E-Sports di Sukabumi, kami mengamati bahwa ekosistem lokal saat ini dipenuhi oleh turnamen berskala mikro yang belum terstandarisasi. Akibatnya, banyak talenta potensial dengan mekanik tingkat tinggi tidak terekspos ke radar pencari bakat nasional.
+              Menyikapi urgensi pembinaan talenta olahraga elektronik (E-Sports) di wilayah Sukabumi, kami mengidentifikasi adanya kebutuhan mendasar terhadap standardisasi kompetisi. Ekosistem lokal saat ini masih didominasi oleh penyelenggaraan skala mikro yang belum memenuhi kualifikasi industri. Kondisi tersebut mengakibatkan banyaknya talenta potensial dengan kemampuan mekanik tingkat tinggi yang belum terakomodasi dan tidak terpantau oleh radar pencari bakat tingkat nasional.
             </p>
             <p className="mt-3">
-              Event ini dikonsep dengan standar <em>production value</em> berskala nasional—mencakup panggung megah, tata cahaya profesional, <em>live casting</em>, dan <em>broadcasting</em> interaktif. Melalui pendekatan ini, kami tidak hanya menghadirkan sebuah turnamen, melainkan sebuah festival olahraga elektronik yang menumbuhkan kebanggaan daerah serta membuka pintu karir bagi atlet amatir untuk melangkah ke kancah E-Sports profesional.
+              Sebagai bentuk intervensi strategis, kegiatan ini dirancang dengan mengusung standar nilai produksi (<em>production value</em>) berskala nasional—meliputi infrastruktur panggung utama yang komprehensif, tata cahaya profesional, sistem penyiaran langsung (<em>live broadcasting</em>), serta pelibatan komentator resmi (<em>live casting</em>). Melalui pendekatan komprehensif ini, kami bertujuan tidak sekadar menyelenggarakan kompetisi konvensional, melainkan menginisiasi sebuah festival olahraga elektronik terpadu yang mampu menumbuhkan kebanggaan representatif daerah, sekaligus meretas jalan bagi atlet amatir menuju jenjang karir E-Sports profesional.
             </p>
           </div>
 
@@ -253,7 +260,7 @@ export default function Proposal() {
           
           {/* Custom Header Badge */}
           <div className="absolute top-10 left-10 flex items-center gap-3">
-             <div className="px-3 py-1 bg-emerald-500 text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md">Halaman 4</div>
+             <div className="px-3 py-1 bg-emerald-500 text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md">Halaman 3</div>
              <span className="text-white text-xs font-semibold uppercase tracking-widest drop-shadow-md">Visi & Misi</span>
           </div>
         </div>
@@ -326,7 +333,7 @@ export default function Proposal() {
 
       {/* 5. Profil Penyelenggara */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 5" title="Profil Penyelenggara" />
+        <PageHeader chapter="HALAMAN 4" title="Profil Penyelenggara" />
         <div className="flex-1 flex flex-col">
           <FormalTitle title="Profil Penyelenggara" icon={UserCheck} />
           
@@ -422,7 +429,7 @@ export default function Proposal() {
           
           {/* Custom Header Badge */}
           <div className="absolute top-10 left-10 flex items-center gap-3">
-             <div className="px-3 py-1 bg-emerald-500 text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md">Halaman 6</div>
+             <div className="px-3 py-1 bg-emerald-500 text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md">Halaman 5</div>
              <span className="text-white text-xs font-semibold uppercase tracking-widest drop-shadow-md">Format Kegiatan</span>
           </div>
         </div>
@@ -444,7 +451,7 @@ export default function Proposal() {
           {/* Philosophy Box */}
           <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-2xl p-6 shadow-sm mb-8">
             <p className="text-slate-700 text-sm leading-relaxed text-justify">
-              Tema <strong className="text-emerald-600">"Unleash The Champion Within"</strong> memiliki makna filosofis mendalam, yakni membangkitkan potensi juara yang tertidur di dalam diri setiap pemuda. Acara ini bukan sekadar turnamen, melainkan panggung pembuktian bagi mereka yang berani bermimpi besar.
+              Tema <strong className="text-emerald-600">&quot;Unleash The Champion Within&quot;</strong> memiliki makna filosofis mendalam, yakni membangkitkan potensi juara yang tertidur di dalam diri setiap pemuda. Acara ini bukan sekadar turnamen, melainkan panggung pembuktian bagi mereka yang berani bermimpi besar.
             </p>
           </div>
 
@@ -492,7 +499,7 @@ export default function Proposal() {
           
           {/* Custom Header Badge */}
           <div className="absolute top-10 left-10 flex items-center gap-3">
-             <div className="px-3 py-1 bg-emerald-500 text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md">Halaman 7</div>
+             <div className="px-3 py-1 bg-emerald-500 text-white font-bold text-xs uppercase tracking-widest rounded-sm shadow-md">Halaman 6</div>
              <span className="text-white text-xs font-semibold uppercase tracking-widest drop-shadow-md">Analisis & Riset</span>
           </div>
         </div>
@@ -600,13 +607,13 @@ export default function Proposal() {
               <img src="/images/Logo_Esport.png" alt="Sukabumi Esports" className="h-20 mb-8 drop-shadow-lg object-contain" />
 
               <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 bg-amber-500/20 border border-amber-500/50 rounded-full text-amber-400 text-[10px] font-bold tracking-widest uppercase shadow-sm">
-                 <Crown className="w-4 h-4" /> Halaman 8
+                 <Crown className="w-4 h-4" /> Halaman 7
               </div>
               <h3 className="text-3xl font-black text-white leading-tight mb-4 tracking-wide">JALAN MENUJU <br/><span className="text-amber-400">LIGA NASIONAL</span></h3>
               <div className="w-12 h-1 bg-emerald-500 mb-6"></div>
               
               <p className="text-xs text-emerald-50 leading-relaxed mb-4 text-justify">
-                 Sukabumi telah terbukti melahirkan atlet-atlet elit yang berlaga di tingkat teratas seperti <strong>MPL (Mobile Legends Professional League) Indonesia</strong>. Kompetisi "Clash of Champions" bukan sekadar ajang perebutan piala, melainkan <strong>kawah candradimuka</strong> dan sistem <em>talent scouting</em> resmi untuk bibit muda.
+                 Sukabumi telah terbukti melahirkan atlet-atlet elit yang berlaga di tingkat teratas seperti <strong>MPL (Mobile Legends Professional League) Indonesia</strong>. Kompetisi &quot;Clash of Champions&quot; bukan sekadar ajang perebutan piala, melainkan <strong>kawah candradimuka</strong> dan sistem <em>talent scouting</em> resmi untuk bibit muda.
               </p>
               <p className="text-xs text-emerald-50 leading-relaxed text-justify mb-8">
                  Panitia telah menjalin koordinasi strategis dengan pencari bakat dari tim-tim profesional raksasa. Pemain dengan performa mekanik, penguasaan makro, dan mentalitas terbaik akan mendapatkan pantauan khusus selama turnamen berlangsung.
@@ -702,7 +709,7 @@ export default function Proposal() {
 
       {/* 9. Strategi Marketing & Exposure */}
       <PrintPage className="bg-slate-50">
-        <PageHeader chapter="HALAMAN 9" title="Strategi Marketing & Exposure" />
+        <PageHeader chapter="HALAMAN 8" title="Strategi Marketing & Exposure" />
         <div className="flex-1 flex flex-col">
           <FormalTitle title="Strategi Marketing & Exposure" icon={TrendingUp} />
           
@@ -811,7 +818,7 @@ export default function Proposal() {
 
       {/* 10. Rangkaian Acara */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 10" title="Rangkaian Acara Resmi" />
+        <PageHeader chapter="HALAMAN 9" title="Rangkaian Acara Resmi" />
         <div className="flex-1 flex flex-col">
           <FormalTitle title="Rangkaian Acara Resmi" icon={CalendarDays} />
           
@@ -928,7 +935,7 @@ export default function Proposal() {
 
       {/* 11. Publikasi */}
       <PrintPage>
-         <PageHeader chapter="HALAMAN 11" title="Kanal Publikasi Resmi" />
+         <PageHeader chapter="HALAMAN 10" title="Kanal Publikasi Resmi" />
          
          <div className="flex-1 flex flex-row bg-white rounded-2xl border-2 border-slate-100 shadow-sm overflow-hidden mt-4">
             {/* Left Side: Image */}
@@ -985,7 +992,7 @@ export default function Proposal() {
 
       {/* 12. Guest Star */}
       <PrintPage>
-         <PageHeader chapter="HALAMAN 12" title="Guest Star & Talent" />
+         <PageHeader chapter="HALAMAN 11" title="Guest Star & Talent" />
          
          <div className="flex-1 flex flex-col justify-center">
             
@@ -1066,7 +1073,7 @@ export default function Proposal() {
 
       {/* 13. Visual Venue 1 */}
       <PrintPage>
-         <PageHeader chapter="HALAMAN 13" title="Visualisasi Venue: Fasad & Gate Masuk" />
+         <PageHeader chapter="HALAMAN 12" title="Visualisasi Venue: Fasad & Gate Masuk" />
          <div className="flex-1 flex flex-col gap-6 pt-4 h-full">
             {/* Foto 1 */}
             <div className="flex-1 w-full bg-emerald-950 rounded-3xl overflow-hidden relative shadow-md border-2 border-slate-100 group">
@@ -1096,7 +1103,7 @@ export default function Proposal() {
 
       {/* 14. Visual Venue 2: Main Stage */}
       <PrintPage>
-         <PageHeader chapter="HALAMAN 14" title="Visualisasi Venue: Main Stage" />
+         <PageHeader chapter="HALAMAN 13" title="Visualisasi Venue: Main Stage" />
          <div className="flex-1 flex flex-col pt-4 h-full pb-4">
             <div className="flex-1 w-full bg-emerald-950 rounded-3xl overflow-hidden relative shadow-md border-2 border-slate-100 group">
                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent z-10"></div>
@@ -1114,7 +1121,7 @@ export default function Proposal() {
 
       {/* 15. Skema & Mekanisme Kompetisi */}
       <PrintPage>
-         <PageHeader chapter="HALAMAN 15" title="Skema & Mekanisme Kompetisi" />
+         <PageHeader chapter="HALAMAN 14" title="Skema & Mekanisme Kompetisi" />
          <div className="flex-1 flex flex-col pt-4">
             <div className="text-center mb-8">
                <h3 className="text-3xl font-black text-slate-800 tracking-tight mb-2">REGULASI & FORMAT</h3>
@@ -1164,36 +1171,30 @@ export default function Proposal() {
                
                <div className="grid grid-cols-3 gap-4 h-full items-stretch">
                   {/* Phase 1 */}
-                  <div className="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col relative shadow-sm">
+                  <div className="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col relative shadow-sm hover:border-slate-300 transition-colors">
                      <div className="absolute top-0 right-0 p-3"><div className="w-2 h-2 rounded-full bg-slate-300"></div></div>
-                     <p className="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-1">FASE AWAL</p>
-                     <h5 className="text-sm font-bold text-slate-800 mb-3">Qualifiers Stage</h5>
-                     <div className="mt-auto">
-                        <div className="inline-block px-3 py-1.5 bg-slate-100 text-slate-600 text-[10px] font-black rounded-lg mb-2 border border-slate-200">BEST OF 1 (BO1)</div>
-                        <p className="text-[10px] text-slate-500 leading-relaxed">Sistem gugur mematikan. Tim dipaksa bermain aman tanpa celah karena satu kekalahan langsung berarti eliminasi (<em>Sudden Death</em>).</p>
-                     </div>
+                     <p className="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-1">FASE AWAL</p>
+                     <h5 className="text-lg font-black text-slate-800 mb-3 tracking-tight h-14">Qualifiers Stage</h5>
+                     <div className="inline-flex w-max px-3 py-1.5 bg-slate-100 text-slate-600 text-[10px] font-black rounded-md mb-4 border border-slate-200">BEST OF 1 (BO1)</div>
+                     <p className="text-[10px] text-slate-500 leading-relaxed mt-auto text-left">Sistem gugur mematikan. Tim dipaksa bermain aman tanpa celah karena satu kekalahan langsung berarti eliminasi (<em>Sudden Death</em>).</p>
                   </div>
 
                   {/* Phase 2 */}
                   <div className="bg-white border border-amber-200 rounded-2xl p-5 flex flex-col relative shadow-md">
                      <div className="absolute top-0 right-0 p-3"><div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></div></div>
-                     <p className="text-[10px] font-black uppercase text-amber-500 tracking-widest mb-1">MAIN EVENT</p>
-                     <h5 className="text-sm font-bold text-slate-800 mb-3">Quarter & Semifinal</h5>
-                     <div className="mt-auto">
-                        <div className="inline-block px-3 py-1.5 bg-amber-50 text-amber-700 text-[10px] font-black rounded-lg mb-2 border border-amber-200">BEST OF 3 (BO3)</div>
-                        <p className="text-[10px] text-slate-500 leading-relaxed">Bermain di panggung utama. Menuntut tim mengamankan 2 poin kemenangan mutlak, mengeliminasi faktor *luck* murni.</p>
-                     </div>
+                     <p className="text-[10px] font-bold uppercase text-amber-500 tracking-widest mb-1">MAIN EVENT</p>
+                     <h5 className="text-lg font-black text-slate-800 mb-3 tracking-tight h-14">Quarter & Semifinal</h5>
+                     <div className="inline-flex w-max px-3 py-1.5 bg-amber-50 text-amber-700 text-[10px] font-black rounded-md mb-4 border border-amber-200">BEST OF 3 (BO3)</div>
+                     <p className="text-[10px] text-slate-500 leading-relaxed mt-auto text-left">Bermain di panggung utama. Menuntut tim mengamankan 2 poin kemenangan mutlak, mengeliminasi faktor <em>luck</em> murni.</p>
                   </div>
 
                   {/* Phase 3 */}
                   <div className="bg-gradient-to-br from-emerald-900 to-emerald-950 border border-emerald-700 rounded-2xl p-5 flex flex-col relative shadow-xl transform scale-[1.02]">
-                     <div className="absolute top-0 right-0 p-3"><Star className="w-3 h-3 text-amber-400" /></div>
-                     <p className="text-[10px] font-black uppercase text-emerald-400 tracking-widest mb-1">THE CLIMAX</p>
-                     <h5 className="text-sm font-bold text-white mb-3">Grand Final Match</h5>
-                     <div className="mt-auto">
-                        <div className="inline-block px-3 py-1.5 bg-amber-500 text-slate-900 text-[10px] font-black rounded-lg mb-2 shadow-sm">BEST OF 5 (BO5)</div>
-                        <p className="text-[10px] text-emerald-100/80 leading-relaxed">Puncak eksekusi stamina mental. Tim yang mencetak 3 kali kemenangan berhak mengangkat piala. Pertempuran sengit berjam-jam.</p>
-                     </div>
+                     <div className="absolute top-0 right-0 p-4"><Star className="w-4 h-4 text-amber-400 fill-amber-400/20" /></div>
+                     <p className="text-[10px] font-bold uppercase text-emerald-400 tracking-widest mb-1">THE CLIMAX</p>
+                     <h5 className="text-lg font-black text-white mb-3 tracking-tight h-14">Grand Final Match</h5>
+                     <div className="inline-flex w-max px-3 py-1.5 bg-amber-500 text-slate-900 text-[10px] font-black rounded-md mb-4 shadow-sm">BEST OF 5 (BO5)</div>
+                     <p className="text-[10px] text-emerald-100/80 leading-relaxed mt-auto text-left">Puncak eksekusi stamina mental. Tim yang mencetak 3 kali kemenangan berhak mengangkat piala. Pertempuran sengit berjam-jam.</p>
                   </div>
                </div>
             </div>
@@ -1203,126 +1204,388 @@ export default function Proposal() {
 
       {/* 16. Sistem Bracket & Alur Kompetisi */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 16" title="Sistem Bracket & Alur Kompetisi" />
-        <div className="flex-1">
-          <FormalTitle title="Sistem Bracket & Alur Kompetisi" icon={Maximize2} />
-          <p className="text-sm text-slate-700 text-justify mb-6 leading-relaxed">
-            Acara ini mengadopsi sistem gugur tunggal (<strong>Single Elimination Bracket</strong>). Setiap tim yang mengalami kekalahan langsung dinyatakan gugur tanpa masuk ke bagan bawah (Lower Bracket). Hal ini dipilih agar atmosfir setiap pertandingan berlangsung sangat krusial ("Do or Die").
-          </p>
-          <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col items-center">
-            <div className="w-full max-w-sm bg-emerald-50 border border-emerald-200 p-3 rounded-lg text-center">
-              <p className="text-xs font-bold text-emerald-800">Tahap 1</p>
-              <p className="text-sm font-semibold text-slate-700">Kualifikasi Online (64 Tim)</p>
-            </div>
-            <div className="w-1 h-6 bg-slate-300"></div>
-            <div className="w-full max-w-xs bg-emerald-100 border border-emerald-300 p-3 rounded-lg text-center">
-              <p className="text-xs font-bold text-emerald-800">Tahap 2</p>
-              <p className="text-sm font-semibold text-slate-700">Babak 16 Besar Offline</p>
-            </div>
-            <div className="w-1 h-6 bg-slate-300"></div>
-            <div className="w-full max-w-xs bg-emerald-200 border border-emerald-400 p-3 rounded-lg text-center">
-              <p className="text-xs font-bold text-emerald-900">Tahap 3</p>
-              <p className="text-sm font-semibold text-slate-700">Perempat & Semifinal Offline</p>
-            </div>
-            <div className="w-1 h-6 bg-slate-300"></div>
-            <div className="w-full max-w-xs bg-amber-100 border-2 border-amber-400 p-4 rounded-lg text-center shadow-md">
-              <p className="text-xs font-bold text-amber-800">Puncak Acara</p>
-              <p className="text-base font-black text-amber-600">Grand Final (2 Tim)</p>
-            </div>
+        <PageHeader chapter="HALAMAN 15" title="Sistem Bracket & Alur Kompetisi" />
+        <div className="flex-1 flex flex-col h-full pt-4 pb-2">
+          
+          <div className="mb-6 flex gap-6 items-start bg-slate-50 p-5 rounded-3xl border border-slate-200 shadow-sm relative overflow-hidden">
+             <div className="absolute right-0 top-0 w-32 h-32 bg-emerald-500/5 rounded-bl-full pointer-events-none"></div>
+             <div className="bg-emerald-100 p-3.5 rounded-2xl shrink-0 shadow-inner relative z-10 border border-emerald-200">
+                <Maximize2 className="w-8 h-8 text-emerald-600" />
+             </div>
+             <div className="relative z-10">
+                <h3 className="text-xl font-black text-slate-800 mb-2 tracking-tight">SINGLE ELIMINATION BRACKET <span className="text-emerald-600">(SISTEM GUGUR)</span></h3>
+                <p className="text-[13px] text-slate-600 leading-relaxed text-justify">
+                   Turnamen ini mengadopsi struktur bagan <strong>Gugur Tunggal mutlak</strong>. Setiap tim hanya memiliki satu nyawa pertarungan (<em>Do or Die</em>). Setiap kekalahan akan berakibat langsung pada eliminasi tanpa ada kesempatan kedua di jalur <em>Lower Bracket</em>. Format ini dikunci secara sengaja untuk memastikan tensi setiap pertandingan berada pada titik maksimum, memaksa atlet untuk bermain tanpa celah sejak menit pertama.
+                </p>
+             </div>
+          </div>
+
+          <div className="flex-1 bg-emerald-950 rounded-[2rem] p-6 relative overflow-hidden shadow-2xl border-4 border-emerald-900 flex flex-col">
+             <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+             <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+             
+             <h4 className="text-center text-white font-black tracking-widest text-xl mb-8 drop-shadow-md">ROAD TO CHAMPIONSHIP</h4>
+
+             <div className="flex items-end gap-2 relative z-10 mb-3">
+                {/* Titles Row */}
+                <div className="flex-1 text-center">
+                   <div className="inline-block px-3 py-1 bg-emerald-900 text-emerald-200 text-[10px] font-bold rounded-full mb-1.5 border border-emerald-800">STAGE 1</div>
+                   <h5 className="text-emerald-400 font-black text-sm tracking-wide h-10 flex items-end justify-center">ONLINE QUALIFIERS</h5>
+                </div>
+                <div className="w-8"></div>
+                <div className="flex-1 text-center">
+                   <div className="inline-block px-3 py-1 bg-emerald-800 text-emerald-100 text-[10px] font-bold rounded-full mb-1.5 border border-emerald-700">STAGE 2</div>
+                   <h5 className="text-emerald-300 font-black text-sm tracking-wide h-10 flex items-end justify-center leading-tight">MAIN EVENT PLAYOFFS</h5>
+                </div>
+                <div className="w-8"></div>
+                <div className="flex-1 text-center">
+                   <div className="inline-block px-3 py-1 bg-amber-900/50 text-amber-400 text-[10px] font-bold rounded-full mb-1.5 border border-amber-700/50 shadow-[0_0_10px_rgba(245,158,11,0.2)]">FINAL STAGE</div>
+                   <h5 className="text-amber-400 font-black text-sm drop-shadow-md tracking-wide h-10 flex items-end justify-center">THE GRAND FINAL</h5>
+                </div>
+             </div>
+
+             <div className="flex-1 flex items-stretch gap-2 relative z-10">
+                {/* Stage 1 Card */}
+                <div className="flex-1 flex flex-col group">
+                   <div className="flex-1 bg-emerald-900/60 rounded-3xl border border-emerald-800/80 p-5 relative flex flex-col justify-center group-hover:bg-emerald-800/50 transition-colors">
+                      <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-emerald-950 border-2 border-emerald-500/50 z-20"></div>
+                      <h6 className="text-4xl font-black text-white text-center mb-2">64 <span className="text-xs text-emerald-300 font-bold tracking-widest uppercase">Tim</span></h6>
+                      <p className="text-[10px] text-emerald-100/70 text-center leading-relaxed mt-4 border-t border-emerald-800/50 pt-4">
+                         Proses kualifikasi komprehensif secara daring (<em>online</em>). Partisipan akan didistribusikan ke dalam 4 blok kualifikasi utama. Pengawasan diimplementasikan secara ketat melalui sistem <em>Spectator Mode</em> guna memastikan hanya tim dengan performa terbaik yang berhak melaju ke panggung utama.
+                      </p>
+                   </div>
+                </div>
+
+                {/* Connector */}
+                <div className="w-8 flex items-center justify-center relative">
+                   <div className="absolute h-0.5 w-full bg-emerald-800/50"></div>
+                   <ChevronRight className="w-6 h-6 text-emerald-500 relative z-10 bg-emerald-950 rounded-full" />
+                </div>
+
+                {/* Stage 2 Card */}
+                <div className="flex-1 flex flex-col group">
+                   <div className="flex-1 bg-emerald-800/40 rounded-3xl border border-emerald-700/50 p-5 relative flex flex-col justify-center transform scale-[1.02] shadow-[0_0_20px_rgba(16,185,129,0.15)] group-hover:bg-emerald-800/60 transition-colors z-10">
+                      <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-emerald-950 border-2 border-amber-500/50 z-20"></div>
+                      <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-emerald-950 border-2 border-emerald-500/50 z-20"></div>
+                      <h6 className="text-5xl font-black text-white text-center mb-2">16 <span className="text-xs text-emerald-200/60 font-bold tracking-widest uppercase">Tim</span></h6>
+                      <p className="text-[10px] text-emerald-100/80 text-center leading-relaxed mt-4 border-t border-emerald-700/50 pt-4">
+                         Penyelenggaraan secara luring (<em>offline</em>) di <em>venue</em> resmi yang secara langsung menguji stabilitas mental atlet. Format BO3 diterapkan secara mutlak guna mengeliminasi faktor probabilitas kebetulan (<em>luck</em>) dan memastikan kualitas pertandingan yang autentik.
+                      </p>
+                   </div>
+                </div>
+
+                {/* Connector */}
+                <div className="w-8 flex items-center justify-center relative">
+                   <div className="absolute h-0.5 w-full bg-amber-900/30"></div>
+                   <ChevronRight className="w-6 h-6 text-amber-600/50 relative z-10 bg-emerald-950 rounded-full" />
+                </div>
+
+                {/* Stage 3 Card */}
+                <div className="flex-1 flex flex-col group">
+                   <div className="flex-1 bg-gradient-to-b from-amber-500 to-amber-700 rounded-3xl border-2 border-amber-300 p-5 relative flex flex-col justify-center transform scale-[1.05] shadow-[0_0_30px_rgba(245,158,11,0.4)] z-20">
+                      <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-amber-600 border-2 border-amber-200 z-20"></div>
+                      <Trophy className="w-12 h-12 text-amber-100 mx-auto mb-3 opacity-90 drop-shadow-lg" />
+                      <h6 className="text-6xl font-black text-white text-center mb-1 tracking-tighter drop-shadow-xl">2 <span className="text-xs text-amber-200 font-bold tracking-widest uppercase">Tim</span></h6>
+                      <p className="text-[11px] text-amber-50 text-center leading-relaxed mt-3 border-t border-amber-400/50 pt-3 font-medium drop-shadow-sm">
+                         Pertandingan final penentu gelar juara utama. Menggunakan format seri panjang BO5 yang menguji ketahanan mental, eksekusi mekanik tingkat tinggi, serta penguasaan strategi taktis secara komprehensif.
+                      </p>
+                   </div>
+                </div>
+
+             </div>
+             
+             {/* Decorative Bottom Bar */}
+             <div className="mt-8 flex items-center justify-center gap-3 opacity-50">
+                <div className="h-[1px] w-16 bg-emerald-800/60"></div>
+                <p className="text-[9px] text-emerald-500/80 uppercase tracking-[0.3em] font-bold">Victory favors the prepared</p>
+                <div className="h-[1px] w-16 bg-emerald-800/60"></div>
+             </div>
+
           </div>
         </div>
       </PrintPage>
 
       {/* 17. Penghargaan Individu (Awarding) */}
+      {/* 17. Penghargaan Individu (Awarding) */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 17" title="Penghargaan Individu (Awarding)" />
-        <div className="flex-1">
-          <FormalTitle title="Penghargaan Individu" icon={Award} />
-          <p className="text-sm text-slate-700 text-justify mb-6 leading-relaxed">
-            Selain hadiah trofi dan uang tunai secara kolektif untuk tim yang berhasil menempati posisi Juara 1, Juara 2, dan Juara 3, panitia juga menyiapkan anggaran apresiasi khusus yang akan diberikan kepada performa individual terbaik atlet, sebagai berikut:
-          </p>
-          <div className="grid grid-cols-2 gap-6">
-            <div className="bg-amber-50 border border-amber-200 p-6 rounded-2xl shadow-sm text-center">
-              <Trophy className="w-12 h-12 text-amber-500 mx-auto mb-4" />
-              <h4 className="text-base font-bold text-amber-800 mb-2">Pemain Terbaik (Final MVP)</h4>
-              <p className="text-xs text-slate-700 leading-relaxed mb-4">
-                Gelar kehormatan untuk satu pemain yang memberikan kontribusi poin *KDA* (Kill, Death, Assist) terbaik dan penentu kemenangan mutlak di laga puncak Grand Final.
+        <PageHeader chapter="HALAMAN 16" title="Penghargaan Individu (Awarding)" />
+        <div className="flex-1 flex flex-col pt-2 pb-6">
+          
+          <div className="text-center mb-4">
+            <h3 className="text-3xl font-black text-slate-800 tracking-tight">INDIVIDUAL EXCELLENCE</h3>
+            <p className="text-sm text-slate-500 max-w-xl mx-auto mt-1">Menghargai pencapaian atlet di luar kemenangan tim. Kategori penghargaan ini disiapkan secara khusus untuk memunculkan bintang-bintang baru di ranah E-Sports lokal.</p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-5 mb-4">
+            {/* MVP */}
+            <div className="bg-gradient-to-br from-amber-50 to-white border border-amber-200 p-5 rounded-3xl shadow-sm relative overflow-hidden flex flex-col group hover:shadow-md transition-all">
+              <div className="absolute right-0 top-0 w-32 h-32 bg-amber-400/10 rounded-bl-full pointer-events-none transform group-hover:scale-110 transition-transform"></div>
+              <div className="mb-3 relative z-10">
+                 <div className="w-10 h-10 bg-amber-100 rounded-2xl flex items-center justify-center mb-2 border border-amber-200 shadow-sm">
+                    <Crown className="w-5 h-5 text-amber-600" />
+                 </div>
+                 <h4 className="text-xl font-black text-slate-800 mb-0.5 tracking-tight">Final MVP</h4>
+                 <p className="text-[10px] font-black text-amber-600 uppercase tracking-widest">Most Valuable Player</p>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed mb-4 flex-1 relative z-10">
+                 Gelar tertinggi untuk satu atlet yang menyajikan performa krusial, montase epik, dan kontribusi <em>KDA</em> paling berdampak pada kemenangan di The Grand Final.
               </p>
-              <span className="inline-block bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-bold">Trofi Spesial & Uang Tunai Pembinaan</span>
+              <div className="flex items-center gap-2 mt-auto relative z-10">
+                 <div className="bg-amber-500 text-slate-900 px-3 py-1.5 rounded-lg text-[9px] font-black shadow-sm">TROFI EKSKLUSIF</div>
+                 <div className="bg-slate-800 text-white px-3 py-1.5 rounded-lg text-[9px] font-bold shadow-sm">UANG PEMBINAAN</div>
+              </div>
             </div>
-            <div className="bg-emerald-50 border border-emerald-200 p-6 rounded-2xl shadow-sm text-center">
-              <Crosshair className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
-              <h4 className="text-base font-bold text-emerald-800 mb-2">Gelar Terminator</h4>
-              <p className="text-xs text-slate-700 leading-relaxed mb-4">
-                Apresiasi untuk pemain agresif yang berhasil menorehkan angka agregat "Kill" atau eksekusi poin terbanyak dihitung sejak bergulirnya acara offline secara keseluruhan.
+
+            {/* TERMINATOR */}
+            <div className="bg-gradient-to-br from-emerald-50 to-white border border-emerald-200 p-5 rounded-3xl shadow-sm relative overflow-hidden flex flex-col group hover:shadow-md transition-all">
+              <div className="absolute right-0 top-0 w-32 h-32 bg-emerald-500/10 rounded-bl-full pointer-events-none transform group-hover:scale-110 transition-transform"></div>
+              <div className="mb-3 relative z-10">
+                 <div className="w-10 h-10 bg-emerald-100 rounded-2xl flex items-center justify-center mb-2 border border-emerald-200 shadow-sm">
+                    <Crosshair className="w-5 h-5 text-emerald-600" />
+                 </div>
+                 <h4 className="text-xl font-black text-slate-800 mb-0.5 tracking-tight">The Terminator</h4>
+                 <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">Highest Kill Aggregate</p>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed mb-4 flex-1 relative z-10">
+                 Apresiasi khusus bagi <em>Jungler/Gold Laner</em> agresif yang secara brutal mengamankan poin eksekusi (<em>Kill</em>) terbanyak sepanjang jalannya babak <em>Offline Playoffs</em>.
               </p>
-              <span className="inline-block bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold">Plakat Penghargaan Tersendiri</span>
+              <div className="flex items-center gap-2 mt-auto relative z-10">
+                 <div className="bg-emerald-600 text-white px-3 py-1.5 rounded-lg text-[9px] font-black shadow-sm">PLAKAT SPESIAL</div>
+                 <div className="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg text-[9px] font-bold border border-slate-200">MERCHANDISE</div>
+              </div>
             </div>
           </div>
+
+          <div className="relative flex-1 min-h-[220px] rounded-[2rem] overflow-hidden border border-slate-200 shadow-md group">
+             {/* eslint-disable-next-line @next/next/no-img-element */}
+             <img src="/images/grand_final_stage.png" alt="Awarding Ceremony Stage" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out" />
+             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent"></div>
+             
+             <div className="absolute bottom-6 left-6 right-6">
+                <div className="inline-block px-3 py-1 bg-amber-500/20 backdrop-blur-md text-amber-300 text-[9px] font-black rounded-lg mb-1.5 border border-amber-500/30 tracking-widest uppercase">MALAM PUNCAK</div>
+                <h4 className="text-2xl font-black text-white drop-shadow-md tracking-tight mb-1.5">AWARDING CEREMONY</h4>
+                <p className="text-xs text-slate-200 max-w-2xl leading-relaxed">
+                   Sesi pamungkas penyerahan medali dan pengangkatan trofi yang diliput eksklusif. Momen ini didedikasikan sebagai panggung kehormatan, di mana representasi Sponsor Utama dan VIP akan diundang secara protokoler untuk menyerahkan hadiah langsung kepada para jawara.
+                </p>
+             </div>
+          </div>
+
         </div>
       </PrintPage>
 
       {/* 18. Persyaratan & Regulasi */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 18" title="Persyaratan & Regulasi" />
-        <div className="flex-1">
-          <FormalTitle title="Persyaratan & Regulasi" icon={BookOpen} />
-          <div className="prose prose-slate max-w-none text-sm text-slate-700 text-justify leading-relaxed">
-            <p>
-              Untuk menjaga iklim kompetisi yang bersih (Fair Play) dan profesional, panitia pelaksana menetapkan Buku Peraturan Dasar yang wajib disepakati seluruh tim:
-            </p>
-            <ul className="space-y-2">
-              <li><strong>Verifikasi Dokumen:</strong> Pendaftaran mewajibkan pemain menyertakan salinan fisik KTP / Kartu Pelajar sebagai bukti otentik identitas. Batas minimal usia peserta adalah 15 tahun.</li>
-              <li><strong>Integritas Perangkat Elektronik:</strong> Peserta harus menggunakan <em>smartphone</em> pribadi murni. Bermain menggunakan mesin komputer/emulator (PC) atau *tablet* seperti iPad dilarang mutlak karena dapat memberikan keunggulan sudut pandang layar secara tidak adil.</li>
-              <li><strong>Aturan Interupsi (Pause):</strong> Setiap kapten tim memiliki hak meminta <em>technical pause</em> jika mengalami masalah koneksi ekstrem. Waktu henti dibatasi maksimal 3 menit agar pertandingan tidak berlarut-larut.</li>
-              <li><strong>Kode Etik Pemain:</strong> Kami menerapkan aturan <em>Zero Tolerance</em> terhadap perilaku tercela. Menghina lawan tanding menggunakan kalimat bernada rasisme (SARA), mengucapkan kalimat makian kasar (*Taunting* non-sportif), atau terindikasi menyuntikkan aplikasi pihak ketiga (*cheat/map hack*) akan berakhir pada sanksi <strong>diskualifikasi tanpa peringatan</strong>.</li>
-            </ul>
+        <PageHeader chapter="HALAMAN 17" title="Persyaratan & Regulasi" />
+        <div className="flex-1 flex flex-col pt-2 pb-6">
+          <div className="text-center mb-5">
+            <h3 className="text-3xl font-black text-slate-800 tracking-tight">RULEBOOK & REGULASI</h3>
+            <p className="text-sm text-slate-500 max-w-xl mx-auto mt-1.5">Untuk menjaga iklim kompetisi yang bersih (<em>Fair Play</em>) dan profesional, panitia pelaksana menegakkan serangkaian protokol ketat yang wajib dipatuhi mutlak oleh seluruh delegasi tim.</p>
           </div>
+
+          <div className="grid grid-cols-2 gap-4 mb-4 flex-1 items-stretch">
+            
+            {/* Rule 1 */}
+            <div className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+               <div className="absolute right-0 top-0 w-20 h-20 bg-emerald-500/10 rounded-bl-full pointer-events-none group-hover:bg-emerald-500/20 transition-colors"></div>
+               <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center mb-3 border border-emerald-100">
+                  <UserCheck className="w-5 h-5 text-emerald-600" />
+               </div>
+               <h4 className="text-base font-black text-slate-800 mb-1.5">Verifikasi Dokumen & Identitas</h4>
+               <p className="text-[11px] text-slate-600 leading-relaxed text-justify">
+                  Seluruh <em>roster</em> yang didaftarkan wajib menyertakan salinan fisik dokumen resmi (KTP / Kartu Pelajar) sebagai bukti otentik identitas. Batas minimal usia partisipasi yang diperbolehkan adalah 15 tahun. Pemalsuan identitas untuk menyelundupkan pemain profesional luar daerah akan berakibat pada diskualifikasi permanen.
+               </p>
+            </div>
+
+            {/* Rule 2 */}
+            <div className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+               <div className="absolute right-0 top-0 w-20 h-20 bg-amber-500/10 rounded-bl-full pointer-events-none group-hover:bg-amber-500/20 transition-colors"></div>
+               <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-3 border border-amber-100">
+                  <MonitorPlay className="w-5 h-5 text-amber-600" />
+               </div>
+               <h4 className="text-base font-black text-slate-800 mb-1.5">Integritas Perangkat Elektronik</h4>
+               <p className="text-[11px] text-slate-600 leading-relaxed text-justify">
+                  Atlet diwajibkan menggunakan perangkat <em>smartphone</em> genggam murni. Segala bentuk modifikasi <em>hardware</em> terlarang. Penggunaan mesin komputer/emulator (PC), perangkat makro tambahan, atau gawai berlayar lebar (iPad/Tablet) dilarang mutlak karena terbukti memberikan keunggulan ruang pandang (<em>Field of View</em>) secara tidak adil.
+               </p>
+            </div>
+
+            {/* Rule 3 */}
+            <div className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+               <div className="absolute right-0 top-0 w-20 h-20 bg-emerald-500/10 rounded-bl-full pointer-events-none group-hover:bg-emerald-500/20 transition-colors"></div>
+               <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center mb-3 border border-emerald-100">
+                  <Activity className="w-5 h-5 text-emerald-600" />
+               </div>
+               <h4 className="text-base font-black text-slate-800 mb-1.5">Protokol Interupsi (Pause)</h4>
+               <p className="text-[11px] text-slate-600 leading-relaxed text-justify">
+                  Sistem wasit mengizinkan permintaan waktu henti (<em>technical pause</em>) secara terbatas. Setiap kapten tim berhak meminta <em>pause</em> maksimal 1 kali per laga jika terjadi lonjakan <em>ping</em> ekstrem atau kerusakan gawai. Waktu henti dibatasi durasi maksimal 3 menit agar alur siaran pertandingan langsung tidak terganggu.
+               </p>
+            </div>
+
+            {/* Rule 4 */}
+            <div className="bg-emerald-950 border border-emerald-900 rounded-3xl p-5 shadow-md relative overflow-hidden group">
+               <div className="absolute right-0 top-0 w-20 h-20 bg-red-500/10 rounded-bl-full pointer-events-none group-hover:bg-red-500/20 transition-colors"></div>
+               <div className="w-10 h-10 bg-emerald-900 rounded-xl flex items-center justify-center mb-3 border border-emerald-800/50">
+                  <Scale className="w-5 h-5 text-red-400" />
+               </div>
+               <h4 className="text-base font-black text-white mb-1.5">Kode Etik Zero Tolerance</h4>
+               <p className="text-[11px] text-emerald-100/80 leading-relaxed text-justify">
+                  Menjunjung tinggi sportivitas adalah kewajiban. Perilaku provokasi berlebihan, makian SARA, kontak fisik agresif, atau indikasi penyalahgunaan aplikasi pihak ketiga (<em>Script, Map Hack</em>) akan berujung pada sanksi absolut: <strong className="text-white">Diskualifikasi instan, pencabutan hadiah, dan <em>blacklist</em> dari liga musim berikutnya.</strong>
+               </p>
+            </div>
+
+          </div>
+
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-3 flex items-center gap-3 mt-auto shadow-sm">
+             <div className="bg-amber-100 p-2 rounded-lg shrink-0 border border-amber-200">
+                <ShieldCheck className="w-5 h-5 text-amber-600" />
+             </div>
+             <div>
+                <h5 className="text-[13px] font-black text-amber-900">Keputusan Mutlak Panitia & Wasit</h5>
+                <p className="text-[9px] text-amber-700/80 mt-0.5 leading-relaxed">Buku peraturan (Rulebook) ini akan didistribusikan secara fisik dan dibubuhi tanda tangan materai oleh setiap manajer tim pada saat sesi Technical Meeting. Segala bentuk keputusan akhir dewan wasit di lapangan bersifat mengikat mutlak dan tidak dapat diganggu gugat.</p>
+             </div>
+          </div>
+          
         </div>
       </PrintPage>
 
       {/* 19. Jadwal & Rundown Acara */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 19" title="Jadwal & Rundown Acara" />
-        <div className="flex-1">
-          <FormalTitle title="Jadwal & Rundown Acara Puncak" icon={CalendarDays} />
-          <p className="text-sm font-bold text-slate-800 mb-4">Minggu, 26 Juli 2026 — Lokasi: Gedung Juang 45 Sukabumi</p>
-          <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 shadow-sm text-sm">
-            <table className="w-full text-left">
-              <tbody className="divide-y divide-slate-200">
-                <tr>
-                  <td className="py-3 px-2 font-bold text-emerald-700 w-32 align-top">10:00 - 11:00</td>
-                  <td className="py-3 px-2 align-top text-slate-700"><strong>Pintu Dibuka (Open Gate):</strong> Pengecekan tiket pengunjung, penukaran gelang tanda masuk, registrasi ulang pemain, dan pengkondisian area panggung.</td>
-                </tr>
-                <tr>
-                  <td className="py-3 px-2 font-bold text-emerald-700 align-top">11:00 - 12:00</td>
-                  <td className="py-3 px-2 align-top text-slate-700"><strong>Upacara Pembukaan (Opening Ceremony):</strong> Pidato protokoler oleh Ketua Panitia, perwakilan PB ESI, doa bersama, dan pentas hiburan lokal.</td>
-                </tr>
-                <tr>
-                  <td className="py-3 px-2 font-bold text-emerald-700 align-top">13:00 - 16:00</td>
-                  <td className="py-3 px-2 align-top text-slate-700"><strong>Bronze Match:</strong> Pertandingan penentuan Juara Tiga yang dilakukan dalam format Best of 3.</td>
-                </tr>
-                <tr>
-                  <td className="py-3 px-2 font-bold text-emerald-700 align-top">16:00 - 17:30</td>
-                  <td className="py-3 px-2 align-top text-slate-700"><strong>Fun Match Ekshibisi:</strong> Acara santai berupa pertempuran dalam game antara Penonton VIP melawan Bintang Tamu untuk membagikan <em>doorprize</em>.</td>
-                </tr>
-                <tr className="bg-amber-50">
-                  <td className="py-3 px-2 font-black text-amber-700 align-top">18:30 - 21:30</td>
-                  <td className="py-3 px-2 align-top text-slate-800"><strong>LAGA GRAND FINAL (Best of 5):</strong> Puncak acara. Dilakukan sesi panggilan masuk para pemain ke panggung (Player Walk-In) diikuti serangkaian pertarungan penentu juara pertama.</td>
-                </tr>
-                <tr>
-                  <td className="py-3 px-2 font-bold text-emerald-700 align-top">21:30 - Selesai</td>
-                  <td className="py-3 px-2 align-top text-slate-700"><strong>Seremoni Penutupan (Awarding):</strong> Penyerahan uang tunai maket cek, medali, piala kehormatan, diakhiri dengan foto bersama seluruh manajemen sponsor dan peserta.</td>
-                </tr>
-              </tbody>
-            </table>
+        <PageHeader chapter="HALAMAN 18" title="Jadwal & Rundown Acara" />
+        <div className="flex-1 flex flex-col pt-4 pb-2">
+          
+          <div className="text-center mb-6">
+            <h3 className="text-3xl font-black text-slate-800 tracking-tight">RUNDOWN ACARA PUNCAK</h3>
+            <p className="text-sm text-slate-500 max-w-xl mx-auto mt-2">Jadwal eksekusi <em>Main Event</em> (Offline) akan dilangsungkan selama 2 hari beruntun di Gedung Juang 45. Tanggal spesifik saat ini bersifat <strong className="text-amber-600">TBA (To Be Announced)</strong>.</p>
+          </div>
+
+          <div className="flex gap-6 flex-1 items-stretch">
+             
+             {/* Hari 1 */}
+             <div className="flex-1 bg-white border border-slate-200 rounded-[2rem] p-6 shadow-sm flex flex-col relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-2 bg-emerald-500"></div>
+                
+                <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                   <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                      <CalendarDays className="w-6 h-6 text-emerald-600" />
+                   </div>
+                   <div>
+                      <h4 className="text-lg font-black text-slate-800">DAY 1: PLAYOFFS</h4>
+                      <p className="text-[10px] text-slate-500 font-bold tracking-widest uppercase">Babak 16 Besar & 8 Besar</p>
+                   </div>
+                </div>
+
+                <div className="flex-1 relative pl-2">
+                   <div className="absolute left-[19px] top-2 bottom-2 w-0.5 bg-slate-100"></div>
+                   
+                   <div className="flex gap-4 mb-5 relative z-10">
+                      <div className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-md relative -left-0.5">
+                         <div className="w-2 h-2 rounded-full bg-white"></div>
+                      </div>
+                      <div>
+                         <p className="text-[10px] font-bold text-emerald-600 mb-0.5">09:00 - 10:00 WIB</p>
+                         <h5 className="text-[13px] font-black text-slate-800 mb-1">Open Gate & Registrasi</h5>
+                         <p className="text-[10px] text-slate-500 leading-relaxed text-justify pr-2">Verifikasi data pemain, penyerahan ID Card peserta, pengecekan kelengkapan perangkat gawai (<em>device check</em>), dan sterilisasi panggung.</p>
+                      </div>
+                   </div>
+
+                   <div className="flex gap-4 mb-5 relative z-10">
+                      <div className="w-6 h-6 rounded-full bg-white border-2 border-slate-300 flex items-center justify-center shrink-0 relative -left-0.5"></div>
+                      <div>
+                         <p className="text-[10px] font-bold text-slate-500 mb-0.5">10:00 - 11:30 WIB</p>
+                         <h5 className="text-[13px] font-black text-slate-800 mb-1">Opening Ceremony</h5>
+                         <p className="text-[10px] text-slate-500 leading-relaxed text-justify pr-2">Menyanyikan lagu kebangsaan, sambutan protokoler pejabat daerah & PB ESI, doa bersama, serta pentas hiburan/tarian lokal sebagai pembuka.</p>
+                      </div>
+                   </div>
+
+                   <div className="flex gap-4 mb-5 relative z-10">
+                      <div className="w-6 h-6 rounded-full bg-white border-2 border-slate-300 flex items-center justify-center shrink-0 relative -left-0.5"></div>
+                      <div>
+                         <p className="text-[10px] font-bold text-slate-500 mb-0.5">12:30 - 18:00 WIB</p>
+                         <h5 className="text-[13px] font-black text-slate-800 mb-1">Playoffs 16 & 8 Besar</h5>
+                         <p className="text-[10px] text-slate-500 leading-relaxed text-justify pr-2">Rangkaian panjang pertempuran sistem gugur. Menggunakan format rotasi panggung yang dipandu *live* oleh Caster. Diselingi *break* ISHOMA.</p>
+                      </div>
+                   </div>
+
+                   <div className="flex gap-4 relative z-10">
+                      <div className="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center shrink-0 relative -left-0.5">
+                         <div className="w-2 h-2 rounded-full bg-slate-400"></div>
+                      </div>
+                      <div>
+                         <p className="text-[10px] font-bold text-slate-500 mb-0.5">18:00 WIB - Selesai</p>
+                         <h5 className="text-[13px] font-black text-slate-800 mb-1">Closing Day 1</h5>
+                         <p className="text-[10px] text-slate-500 leading-relaxed text-justify pr-2">Pengumuman 4 tim (Semifinalis) yang berhak melaju ke panggung utama di Hari Kedua. Diikuti sesi wawancara media.</p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+
+             {/* Hari 2 */}
+             <div className="flex-1 bg-emerald-950 border-4 border-emerald-900 rounded-[2rem] p-6 shadow-xl flex flex-col relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div className="flex items-center gap-3 mb-6 border-b border-emerald-800/50 pb-4 relative z-10">
+                   <div className="w-12 h-12 bg-emerald-900 rounded-xl flex items-center justify-center border border-emerald-800 shadow-inner">
+                      <Trophy className="w-6 h-6 text-amber-500" />
+                   </div>
+                   <div>
+                      <h4 className="text-lg font-black text-white drop-shadow-sm">DAY 2: THE FINALS</h4>
+                      <p className="text-[10px] text-amber-400 font-bold tracking-widest uppercase">Semifinal & Grand Final</p>
+                   </div>
+                </div>
+
+                <div className="flex-1 relative pl-2 z-10">
+                   <div className="absolute left-[19px] top-2 bottom-2 w-0.5 bg-emerald-800/50"></div>
+                   
+                   <div className="flex gap-4 mb-5 relative z-10">
+                      <div className="w-6 h-6 rounded-full bg-emerald-800 border-2 border-emerald-600 flex items-center justify-center shrink-0 relative -left-0.5"></div>
+                      <div>
+                         <p className="text-[10px] font-bold text-emerald-400 mb-0.5">10:00 - 13:00 WIB</p>
+                         <h5 className="text-[13px] font-black text-emerald-50 mb-1">Semifinal Stage (BO3)</h5>
+                         <p className="text-[10px] text-emerald-100/70 leading-relaxed text-justify pr-2">Pertarungan krusial penentuan tiket final bagi 4 tim tersisa. Skala euforia ditingkatkan dengan pencahayaan dan *sound system* maksimal.</p>
+                      </div>
+                   </div>
+
+                   <div className="flex gap-4 mb-5 relative z-10">
+                      <div className="w-6 h-6 rounded-full bg-emerald-800 border-2 border-emerald-600 flex items-center justify-center shrink-0 relative -left-0.5"></div>
+                      <div>
+                         <p className="text-[10px] font-bold text-emerald-400 mb-0.5">14:00 - 16:30 WIB</p>
+                         <h5 className="text-[13px] font-black text-emerald-50 mb-1">Bronze & Fun Match</h5>
+                         <p className="text-[10px] text-emerald-100/70 leading-relaxed text-justify pr-2">Perebutan Juara 3. Dilanjutkan laga interaktif (*Fun Match*) Penonton VIP melawan <em>Cosplayer/Influencer</em> untuk membagikan <em>doorprize</em>.</p>
+                      </div>
+                   </div>
+
+                   <div className="flex gap-4 mb-5 relative z-10">
+                      <div className="w-6 h-6 rounded-full bg-amber-500 border border-amber-300 flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(245,158,11,0.5)] relative -left-0.5">
+                         <Star className="w-3 h-3 text-slate-900" />
+                      </div>
+                      <div>
+                         <p className="text-[10px] font-black text-amber-400 mb-0.5 tracking-widest">18:30 - 21:30 WIB</p>
+                         <h5 className="text-[14px] font-black text-amber-300 mb-1 drop-shadow-md">THE GRAND FINAL (BO5)</h5>
+                         <p className="text-[10px] text-amber-50/80 leading-relaxed text-justify pr-2">Puncak Acara. Sesi <em>Player Walk-In</em> dramatis ke atas panggung, dilanjutkan pertempuran 5 ronde panjang (Best of 5) yang epik.</p>
+                      </div>
+                   </div>
+
+                   <div className="flex gap-4 relative z-10">
+                      <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 shadow-md relative -left-0.5">
+                         <Crown className="w-3 h-3 text-emerald-950" />
+                      </div>
+                      <div>
+                         <p className="text-[10px] font-bold text-emerald-400 mb-0.5">21:30 WIB - Selesai</p>
+                         <h5 className="text-[13px] font-black text-white mb-1">Awarding Ceremony</h5>
+                         <p className="text-[10px] text-emerald-100/70 leading-relaxed text-justify pr-2">Prosesi angkat piala (Trophy Lift), serah terima hadiah oleh Sponsor & VIP, selebrasi konfeti, dan foto bersama penutup.</p>
+                      </div>
+                   </div>
+
+                </div>
+             </div>
+
           </div>
         </div>
       </PrintPage>
 
       {/* 20. Timeline Pelaksanaan */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 20" title="Timeline Pelaksanaan" />
+        <PageHeader chapter="HALAMAN 19" title="Timeline Pelaksanaan" />
         <div className="flex-1 flex flex-col">
           <FormalTitle title="Roadmap & Timeline Operasional" icon={CalendarDays} />
           <p className="text-sm text-slate-700 mb-8 leading-relaxed">
@@ -1396,7 +1659,7 @@ export default function Proposal() {
 
       {/* 21. Produksi & Tata Ruang */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 21" title="Produksi & Tata Ruang" />
+        <PageHeader chapter="HALAMAN 20" title="Produksi & Tata Ruang" />
         <div className="flex-1">
           <FormalTitle title="Produksi Panggung & Tata Ruang" icon={Map} />
           <div className="prose prose-slate max-w-none text-sm text-slate-700 text-justify leading-relaxed">
@@ -1418,20 +1681,63 @@ export default function Proposal() {
 
       {/* 22. Denah & Spesifikasi */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 22" title="Denah & Spesifikasi" />
+        <PageHeader chapter="HALAMAN 21" title="Denah & Spesifikasi" />
         <div className="flex-1">
           <FormalTitle title="Denah Area (Venue Layout)" icon={Layout} />
-          <p className="text-sm text-slate-700 text-justify mb-4 leading-relaxed">
-            Pembagian tata letak area kegiatan diatur dengan alur pergerakan manusia (*flow of traffic*) yang rasional, mencegah penumpukan massa di satu titik.
+          <p className="text-sm text-slate-700 text-left mb-6 leading-relaxed">
+            Pembagian tata letak area kegiatan diatur dengan alur pergerakan manusia (<em>flow of traffic</em>) yang rasional, mencegah penumpukan massa di satu titik.
           </p>
-          <div className="bg-slate-50 border-2 border-dashed border-emerald-300 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-sm">
-            <Layout className="w-16 h-16 text-emerald-400 mb-4" />
-            <p className="text-base font-bold text-slate-800 mb-2">Simulasi Pemetaan Ruangan (Zoning)</p>
-            <div className="text-sm text-slate-600 text-left w-full max-w-lg mt-4 space-y-3">
-              <p><strong>Zona Utara (Ujung):</strong> Panggung Utama, Layar LED Raksasa, dan Ruang Tunggu Eksklusif Pemain (Backstage).</p>
-              <p><strong>Zona Tengah:</strong> Tribun tempat duduk pengunjung terbagi menjadi dua sektor (Sayap Kiri dan Kanan), dipisahkan lorong koridor tengah untuk parade masuk atlet.</p>
-              <p><strong>Zona Sayap:</strong> Area operasional Front Of House (FOH) tempat sutradara siaran dan alat kontrol teknisi berada, serta Caster Desk untuk pemandu acara.</p>
-              <p><strong>Zona Selatan (Depan/Gerbang):</strong> Akses pintu masuk (Gate), loket penukaran tiket, dan deretan ruang berjejaring untuk Booth Aktivasi Sponsor serta Bazaar Kuliner UMKM.</p>
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-row gap-8 items-center relative overflow-hidden">
+            {/* Background Accent */}
+            <div className="absolute -right-20 -top-20 w-64 h-64 bg-emerald-50 rounded-full blur-3xl pointer-events-none"></div>
+
+            {/* Left: Image Blueprint */}
+            <div className="w-[45%] relative aspect-square rounded-2xl overflow-hidden border-4 border-slate-900 shadow-2xl group z-10 shrink-0">
+               <img src="/images/venue_layout.png" alt="Venue Layout Blueprint" className="w-full h-full object-cover filter brightness-110 group-hover:scale-105 transition-transform duration-700" />
+               <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none rounded-2xl"></div>
+               {/* Overlay labels */}
+               <div className="absolute top-4 inset-x-0 flex justify-center"><span className="px-3 py-1 bg-emerald-600/90 backdrop-blur-md text-white text-[9px] font-black tracking-widest rounded-full uppercase border border-emerald-400/50 shadow-md">Zona Utara (Stage)</span></div>
+               <div className="absolute bottom-4 inset-x-0 flex justify-center"><span className="px-3 py-1 bg-amber-500/90 backdrop-blur-md text-white text-[9px] font-black tracking-widest rounded-full uppercase border border-amber-400/50 shadow-md">Zona Selatan (Entrance)</span></div>
+            </div>
+
+            {/* Right: Zoning Details */}
+            <div className="flex-1 flex flex-col gap-5 z-10">
+               <div className="mb-1">
+                  <div className="inline-block px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-black rounded-lg mb-2 border border-emerald-200">PEMETAAN RUANGAN</div>
+                  <h3 className="text-2xl font-black text-slate-800 tracking-tight">Simulasi Zoning Area</h3>
+               </div>
+               
+               <div className="flex gap-4 items-start bg-slate-50 p-3 rounded-xl border border-slate-100 transition-colors hover:bg-emerald-50/50">
+                  <div className="p-2.5 bg-emerald-100 rounded-lg shrink-0 mt-0.5"><MapPin className="w-4 h-4 text-emerald-700" /></div>
+                  <div>
+                     <h4 className="text-sm font-bold text-slate-800 mb-1">Zona Utara (Ujung)</h4>
+                     <p className="text-xs text-slate-600 leading-relaxed text-left">Panggung Utama, Layar LED Raksasa, dan Ruang Tunggu Eksklusif Pemain (<em>Backstage</em>).</p>
+                  </div>
+               </div>
+
+               <div className="flex gap-4 items-start bg-slate-50 p-3 rounded-xl border border-slate-100 transition-colors hover:bg-slate-100/80">
+                  <div className="p-2.5 bg-slate-200 rounded-lg shrink-0 mt-0.5"><Users className="w-4 h-4 text-slate-700" /></div>
+                  <div>
+                     <h4 className="text-sm font-bold text-slate-800 mb-1">Zona Tengah</h4>
+                     <p className="text-xs text-slate-600 leading-relaxed text-left">Tribun penonton terbagi dua sektor (Sayap Kiri & Kanan), dipisahkan lorong parade atlet.</p>
+                  </div>
+               </div>
+
+               <div className="flex gap-4 items-start bg-slate-50 p-3 rounded-xl border border-slate-100 transition-colors hover:bg-slate-100/80">
+                  <div className="p-2.5 bg-slate-200 rounded-lg shrink-0 mt-0.5"><Settings className="w-4 h-4 text-slate-700" /></div>
+                  <div>
+                     <h4 className="text-sm font-bold text-slate-800 mb-1">Zona Sayap</h4>
+                     <p className="text-xs text-slate-600 leading-relaxed text-left">Area <em>Front Of House</em> (FOH) tempat sutradara siaran, alat kontrol teknisi, dan <em>Caster Desk</em>.</p>
+                  </div>
+               </div>
+
+               <div className="flex gap-4 items-start bg-slate-50 p-3 rounded-xl border border-slate-100 transition-colors hover:bg-amber-50/50">
+                  <div className="p-2.5 bg-amber-100 rounded-lg shrink-0 mt-0.5"><Store className="w-4 h-4 text-amber-700" /></div>
+                  <div>
+                     <h4 className="text-sm font-bold text-slate-800 mb-1">Zona Selatan (Gerbang)</h4>
+                     <p className="text-xs text-slate-600 leading-relaxed text-left">Akses <em>Gate</em> masuk, loket tiket, dan ruang Booth Aktivasi Sponsor & Bazaar Kuliner UMKM.</p>
+                  </div>
+               </div>
             </div>
           </div>
         </div>
@@ -1439,52 +1745,156 @@ export default function Proposal() {
 
       {/* 23. Broadcasting */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 23" title="Broadcasting" />
-        <div className="flex-1">
-          <FormalTitle title="Sistem Penyiaran (Broadcasting)" icon={MonitorPlay} />
-          <div className="prose prose-slate max-w-none text-sm text-slate-700 text-justify leading-relaxed">
-            <p>
-              Selain pengunjung yang datang ke lokasi secara fisik, acara ini dirancang mengudara melalui siaran langsung (Live Streaming) digital di platform YouTube. Memproduksi siaran digital yang elegan tidak sekadar merekam permainan, tetapi memadukan ilmu pertelevisian yang modern. Komponen pendukungnya adalah:
-            </p>
-            <ul>
-              <li><strong>Multi-Camera Setup:</strong> Kami tidak menggunakan satu kamera mati statis. Proses produksi akan menyalakan minimal 4 kamera secara simultan: dua buah *player-cam* yang disorot langsung menatap wajah ketegangan kedua tim, satu kamera luas (wide camera) yang menangkap reaksi histeris penonton, dan satu sudut kamera khusus untuk analis acara (Caster).</li>
-              <li><strong>Juru Kamera Dalam-Permainan (In-Game Observer):</strong> Permainan tidak bergerak sendiri. Dua orang tenaga ahli bersertifikat Observer akan masuk ke ruangan pertandingan dalam mode *spectator*, yang bertugas mengontrol pergerakan kamera layar mengarahkan audiens pada titik-titik krusial di peta pertarungan.</li>
-              <li><strong>Sistem Siaran Ulang (Instant Replay System):</strong> Tim pengarah gambar dilengkapi mesin digital yang bisa mengulang cuplikan adegan pertandingan (Highlight) dalam format gerak lambat sesaat sesudah terjadinya adegan krusial (seperti mencuri *Lord* atau memenangkan pertarungan kelompok).</li>
-            </ul>
+        <PageHeader chapter="HALAMAN 22" title="Broadcasting" />
+        <div className="flex-1 flex flex-col pt-4 pb-2">
+          
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-black text-slate-800 tracking-tight">LIVE <span className="text-emerald-600">BROADCASTING</span> SYSTEM</h3>
+            <p className="text-sm text-slate-500 max-w-xl mx-auto mt-2">Memproduksi siaran digital yang elegan tidak sekadar merekam layar, melainkan memadukan ilmu pertelevisian modern. Kami menghadirkan standar <em>broadcast</em> sekelas liga profesional ke panggung Sukabumi.</p>
           </div>
+
+          <div className="flex flex-col gap-5 relative z-10 mb-6">
+            
+            {/* Multi Camera */}
+            <div className="bg-white border-l-4 border-emerald-500 rounded-r-3xl p-5 shadow-sm relative overflow-hidden group hover:shadow-md transition-all flex gap-5 items-center">
+               <div className="absolute right-0 top-0 w-32 h-32 bg-emerald-500/5 rounded-bl-full pointer-events-none group-hover:bg-emerald-500/10 transition-colors"></div>
+               <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center shrink-0 border border-emerald-100 shadow-inner">
+                  <Tv2 className="w-7 h-7 text-emerald-600" />
+               </div>
+               <div className="flex-1">
+                  <h4 className="text-base font-black text-slate-800 mb-1">Multi-Camera Setup (4 Cam)</h4>
+                  <p className="text-[11px] text-slate-600 leading-relaxed text-justify">
+                     Proses produksi menggunakan minimal <strong>4 kamera resolusi tinggi secara simultan</strong>: Dua <em>player-cam</em> untuk menangkap reaksi tegang wajah kedua tim, satu <em>wide-camera</em> untuk merekam histeria penonton, dan satu kamera khusus (*Caster Desk*) untuk menangkap analisis komentator secara <em>picture-in-picture</em>.
+                  </p>
+               </div>
+            </div>
+
+            {/* In-Game Observer */}
+            <div className="bg-white border-l-4 border-amber-500 rounded-r-3xl p-5 shadow-sm relative overflow-hidden group hover:shadow-md transition-all flex gap-5 items-center">
+               <div className="absolute right-0 top-0 w-32 h-32 bg-amber-500/5 rounded-bl-full pointer-events-none group-hover:bg-amber-500/10 transition-colors"></div>
+               <div className="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center shrink-0 border border-amber-100 shadow-inner">
+                  <Crosshair className="w-7 h-7 text-amber-600" />
+               </div>
+               <div className="flex-1">
+                  <h4 className="text-base font-black text-slate-800 mb-1">Juru Kamera Dalam-Permainan (In-Game Observer)</h4>
+                  <p className="text-[11px] text-slate-600 leading-relaxed text-justify">
+                     Pertandingan di dalam layar tidak bergerak sendiri. Kami menugaskan <strong>Dua Tenaga Ahli Bersertifikat (Observer)</strong> yang masuk ke lobi pertandingan (Mode <em>Spectator</em>). Mereka bertugas mengontrol pergerakan kamera rotasi 360 derajat, mengarahkan penonton pada titik-titik krusial (*Teamfight*) di peta agar tidak ada aksi yang terlewat.
+                  </p>
+               </div>
+            </div>
+
+            {/* Instant Replay */}
+            <div className="bg-slate-900 border-l-4 border-emerald-400 rounded-r-3xl p-5 shadow-lg relative overflow-hidden group hover:bg-slate-800 transition-colors flex gap-5 items-center">
+               <div className="absolute right-0 top-0 w-32 h-32 bg-emerald-500/10 rounded-bl-full pointer-events-none blur-xl"></div>
+               <div className="w-14 h-14 bg-slate-800 rounded-2xl flex items-center justify-center shrink-0 border border-slate-700 shadow-inner">
+                  <PlaySquare className="w-7 h-7 text-emerald-400" />
+               </div>
+               <div className="flex-1">
+                  <h4 className="text-base font-black text-white mb-1">Sistem Siaran Ulang (Instant Replay Engine)</h4>
+                  <p className="text-[11px] text-emerald-100/80 leading-relaxed text-justify">
+                     Tim pengarah gambar (<em>Show Director</em>) dilengkapi perangkat lunak <em>buffer</em> digital yang mampu menyimpan adegan. Saat momen krusial terjadi (Mencuri Lord / <em>Savage</em>), tayangan akan diulang seketika dalam <strong>Format Gerak Lambat (Slow-Motion)</strong>, memberikan efek dramatis ala siaran olahraga internasional.
+                  </p>
+               </div>
+            </div>
+
+          </div>
+
+          <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 flex items-center gap-4 mt-auto mx-4 shadow-sm relative overflow-hidden">
+             <div className="absolute top-0 right-0 w-48 h-full bg-emerald-100/50 skew-x-12 transform translate-x-8 pointer-events-none"></div>
+             <div className="bg-emerald-600 p-2.5 rounded-xl shrink-0 shadow-md relative z-10">
+                <MonitorPlay className="w-5 h-5 text-white" />
+             </div>
+             <div className="relative z-10">
+                <h5 className="text-[11px] font-black text-emerald-900 uppercase tracking-widest mb-0.5">Siaran Langsung Global</h5>
+                <p className="text-[10px] text-emerald-700/90 leading-relaxed">
+                   Seluruh integrasi kamera, suara, dan grafis ini didistribusikan ke *platform* YouTube melalui mesin *encoding bitrate* tinggi, memastikan tontonan tanpa putus (*buffer-free*) bagi ribuan audiens <em>online</em> di seluruh wilayah.
+                </p>
+             </div>
+          </div>
+          
         </div>
       </PrintPage>
 
       {/* 24. Visual Layout */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 24" title="Visual Layout" />
-        <div className="flex-1">
-          <FormalTitle title="Visual Layout & Graphic Assets" icon={Speaker} />
-          <p className="text-sm text-slate-700 text-justify mb-6 leading-relaxed">
-            Cerminan sebuah event profesional terletak pada aset estetika digital yang mulus dan jernih. Oleh sebab itu, seluruh grafis layar acara diproduksi pada resolusi *High Definition* (HD).
-          </p>
-          <div className="space-y-4">
-            <div className="bg-slate-50 border border-slate-200 p-4 rounded-xl flex items-start gap-4 shadow-sm">
-              <Tv2 className="w-8 h-8 text-emerald-600 shrink-0" />
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Layar LED Panggung (Stage Display)</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">Bukan menggunakan proyektor usang, melainkan menyewa bentangan modul Videotron LED *pitch* rapat. Pada layar ini tidak hanya menampilkan peta pertandingan, melainkan tayangan transisi bumper masuk, logo sponsor besar berpendar, hingga menampilkan wajah pemain dan pelatih pada sesi seleksi karakter (*Draft Pick phase*).</p>
-              </div>
-            </div>
-            <div className="bg-slate-50 border border-slate-200 p-4 rounded-xl flex items-start gap-4 shadow-sm">
-              <Layout className="w-8 h-8 text-amber-500 shrink-0" />
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Desain Antarmuka Tontonan (Streaming Overlay HUD)</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">Bagian luar bingkai tayangan YouTube dibungkus secara kustom menggunakan desain bernuansa emas dan biru gelap (sesuai citra warna Mobile Legends). Di sudut layar akan disisipkan kotak iklan kecil berisi kompilasi bergulir aset promosi dari berbagai level mitra sponsor (*Running Logo Sponsor*).</p>
-              </div>
-            </div>
+        <PageHeader chapter="HALAMAN 23" title="Visual Layout" />
+        <div className="flex-1 flex flex-col pt-4 pb-2">
+          
+          <div className="text-center mb-6">
+            <h3 className="text-3xl font-black text-slate-800 tracking-tight">VISUAL & <span className="text-emerald-600">PRODUCTION ASSETS</span></h3>
+            <p className="text-sm text-slate-500 max-w-xl mx-auto mt-2">Cerminan sebuah <em>event</em> profesional terletak pada estetika digital yang disajikan. Seluruh grafis acara diproduksi pada resolusi <em>Ultra High Definition (HD)</em> untuk menjamin impresi visual bagi audiens dan sponsor.</p>
           </div>
+
+          <div className="grid grid-cols-2 gap-5 flex-1 items-stretch mb-5">
+            
+            {/* LED */}
+            <div className="bg-emerald-950 border border-emerald-900 rounded-3xl p-6 shadow-md relative overflow-hidden group">
+               <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-bl-full blur-2xl pointer-events-none group-hover:bg-emerald-500/20 transition-colors"></div>
+               <div className="w-12 h-12 bg-emerald-900 rounded-xl flex items-center justify-center mb-4 border border-emerald-800/50">
+                  <MonitorPlay className="w-6 h-6 text-emerald-400" />
+               </div>
+               <h4 className="text-base font-black text-white mb-2">Stage LED Videotron</h4>
+               <p className="text-[11px] text-emerald-100/80 leading-relaxed text-justify">
+                  Menggunakan bentangan modul Videotron LED <em>pitch</em> rapat sebagai latar utama panggung. Menampilkan antarmuka rotasi peta pertandingan (<em>Minimap</em>), tayangan kamera wajah pemain secara langsung, dan <strong>Penayangan Loop Logo Sponsor</strong> di sela-sela jeda (*Break Phase*).
+               </p>
+            </div>
+
+            {/* HUD */}
+            <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+               <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-bl-full pointer-events-none group-hover:bg-amber-500/20 transition-colors"></div>
+               <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-4 border border-amber-100">
+                  <Layout className="w-6 h-6 text-amber-600" />
+               </div>
+               <h4 className="text-base font-black text-slate-800 mb-2">Streaming Overlay HUD</h4>
+               <p className="text-[11px] text-slate-600 leading-relaxed text-justify">
+                  Bingkai siaran langsung YouTube dibungkus antarmuka kustom bernuansa emas dan hijau (*Signature Theme*). Kami mendedikasikan <strong>Kotak Iklan Permanen (Running Logo)</strong> di sudut layar untuk menampilkan materi promosi mitra sponsor yang ditonton ribuan audiens <em>online</em>.
+               </p>
+            </div>
+
+            {/* Motion */}
+            <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+               <div className="absolute top-0 left-0 w-32 h-32 bg-emerald-500/10 rounded-br-full pointer-events-none group-hover:bg-emerald-500/20 transition-colors"></div>
+               <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4 border border-emerald-100">
+                  <PlaySquare className="w-6 h-6 text-emerald-600" />
+               </div>
+               <h4 className="text-base font-black text-slate-800 mb-2">3D Motion Bumper</h4>
+               <p className="text-[11px] text-slate-600 leading-relaxed text-justify">
+                  Setiap transisi perpindahan pertandingan ke jeda iklan (*Commercial Break*) menggunakan animasi grafis bergerak (<em>Motion Graphics</em>) 3D yang elegan. Logo sponsor utama akan dianimasikan secara dinamis layaknya presentasi liga E-Sports berskala profesional.
+               </p>
+            </div>
+
+            {/* Social Media */}
+            <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+               <div className="absolute top-0 right-0 w-32 h-32 bg-slate-500/10 rounded-bl-full pointer-events-none group-hover:bg-slate-500/20 transition-colors"></div>
+               <div className="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center mb-4 border border-slate-200">
+                  <Megaphone className="w-6 h-6 text-slate-600" />
+               </div>
+               <h4 className="text-base font-black text-slate-800 mb-2">Social Media Campaign Kit</h4>
+               <p className="text-[11px] text-slate-600 leading-relaxed text-justify">
+                  Aset publikasi digital (infografis jadwal, poster klasemen, daftar pemain) akan didesain satu tema (*Brand Guidelines*). Setiap aset *post* Instagram wajib menyertakan deretan logo sponsor mitra yang tersusun rapi di bagian <em>footer</em> (kaki gambar) promosi harian.
+               </p>
+            </div>
+
+          </div>
+
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 flex items-center gap-4 mt-auto shadow-sm">
+             <div className="bg-amber-100 p-3 rounded-xl shrink-0 border border-amber-200">
+                <Maximize2 className="w-6 h-6 text-amber-600" />
+             </div>
+             <div>
+                <h5 className="text-sm font-black text-amber-900">Dedicated Spot Penempatan Logo</h5>
+                <p className="text-[10px] text-amber-700/80 mt-1 leading-relaxed">
+                   Setiap elemen visual di atas mengalokasikan <strong>Persentase Area (Screen Real Estate)</strong> mutlak bagi jenama/merek sponsor. Penempatan serta durasi kemunculan logo disesuaikan berdasarkan tingkatan paket <em>Sponsorship</em> (Sponsor Utama mendapatkan proporsi visual paling dominan).
+                </p>
+             </div>
+          </div>
+          
         </div>
       </PrintPage>
 
       {/* 25. Revenue Stream */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 25" title="Revenue Stream" />
+        <PageHeader chapter="HALAMAN 24" title="Revenue Stream" />
         <div className="flex-1">
           <FormalTitle title="Revenue Stream (Alur Pendapatan Acara)" icon={Coins} />
           <p className="text-sm text-slate-700 text-justify mb-4 leading-relaxed">
@@ -1518,73 +1928,74 @@ export default function Proposal() {
       {/* 26. Kemitraan & Sponsorship */}
       {/* 26. Kemitraan & Sponsorship */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 26" title="Kemitraan & Sponsorship" />
+        <PageHeader chapter="HALAMAN 25" title="Kemitraan & Sponsorship" />
         <div className="flex-1 flex flex-col h-full pt-4 pb-2">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-black text-slate-800 tracking-tight">VIP SPONSORSHIP TIERS</h3>
             <p className="text-sm text-slate-500 max-w-xl mx-auto mt-2">Pilih level integrasi <em>brand</em> Anda. Kami membatasi jumlah mitra demi menjamin eksklusivitas maksimum dan menjanjikan <em>Return of Investment</em> (ROI) yang optimal.</p>
           </div>
 
-          <div className="flex items-end justify-center gap-4 flex-1">
+          <div className="flex items-center justify-center gap-5 flex-1 relative z-10 mt-4">
             
             {/* SILVER */}
-            <div className="w-[30%] bg-white border border-slate-200 rounded-3xl p-5 shadow-sm relative h-[75%] flex flex-col hover:border-slate-300 transition-colors">
-              <div className="text-center mb-4 border-b border-slate-100 pb-4">
+            <div className="w-[30%] bg-white border border-slate-200 rounded-3xl p-6 shadow-sm relative flex flex-col hover:border-slate-300 transition-colors h-[80%]">
+              <div className="text-center mb-5 border-b border-slate-100 pb-5">
                 <p className="text-xs font-bold text-slate-400 tracking-widest uppercase mb-1">Supporting</p>
-                <h4 className="text-2xl font-black text-slate-700">SILVER</h4>
-                <p className="text-lg font-black text-slate-900 mt-2">Rp 35 Juta</p>
+                <h4 className="text-3xl font-black text-slate-700 tracking-tight">SILVER</h4>
+                <p className="text-xl font-black text-slate-900 mt-2">Rp 35 Juta</p>
               </div>
-              <ul className="space-y-4 text-[10px] text-slate-600 flex-1 overflow-y-auto pr-1">
-                <li className="flex gap-2 items-start"><Zap className="w-3 h-3 text-emerald-500 shrink-0 mt-0.5"/> <span><strong>Brand Awareness:</strong> Pencantuman logo (Tier 3) pada pamflet cetak & media promosi digital.</span></li>
-                <li className="flex gap-2 items-start"><Zap className="w-3 h-3 text-emerald-500 shrink-0 mt-0.5"/> <span><strong>Stage Shoutout:</strong> <em>Adlibs</em> (penyebutan nama brand) oleh MC di sesi pembukaan & penutupan.</span></li>
-                <li className="flex gap-2 items-start"><Zap className="w-3 h-3 text-emerald-500 shrink-0 mt-0.5"/> <span><strong>Direct Sampling:</strong> Izin resmi mengerahkan 2 staf *usher* untuk *flyering* di pintu masuk.</span></li>
+              <ul className="space-y-4 text-[10px] text-slate-600 flex-1">
+                <li className="flex gap-2 items-start"><Zap className="w-4 h-4 text-emerald-500 shrink-0"/> <span><strong>Brand Awareness:</strong> Pencantuman logo (Tier 3) pada pamflet cetak & media promosi digital.</span></li>
+                <li className="flex gap-2 items-start"><Zap className="w-4 h-4 text-emerald-500 shrink-0"/> <span><strong>Stage Shoutout:</strong> <em>Adlibs</em> (penyebutan nama brand) oleh MC di sesi pembukaan & penutupan.</span></li>
+                <li className="flex gap-2 items-start"><Zap className="w-4 h-4 text-emerald-500 shrink-0"/> <span><strong>Direct Sampling:</strong> Izin resmi mengerahkan 2 staf <em>usher</em> untuk <em>flyering</em> di pintu masuk.</span></li>
               </ul>
             </div>
 
             {/* PLATINUM */}
-            <div className="w-[40%] bg-emerald-950 rounded-3xl p-6 shadow-2xl relative h-[95%] flex flex-col transform -translate-y-4 border border-emerald-800 group">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-900 text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg whitespace-nowrap z-10">PALING EKSKLUSIF</div>
+            <div className="w-[40%] bg-emerald-950 rounded-3xl p-8 shadow-2xl relative flex flex-col border border-emerald-800 group h-[95%] z-10 transform scale-105">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-900 text-[11px] font-black uppercase tracking-widest px-5 py-2 rounded-full shadow-lg whitespace-nowrap z-10 border border-amber-300">PALING EKSKLUSIF</div>
               <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/50 to-transparent rounded-3xl z-0 pointer-events-none"></div>
-              <div className="text-center mb-5 border-b border-emerald-800/50 pb-5 relative z-10 mt-2">
+              <div className="text-center mb-6 border-b border-emerald-800/50 pb-6 relative z-10 mt-2">
                 <p className="text-xs font-bold text-amber-400 tracking-widest uppercase mb-1 drop-shadow-md">Title Sponsor (1 Slot)</p>
-                <h4 className="text-3xl font-black text-white drop-shadow-lg">PLATINUM</h4>
+                <h4 className="text-4xl font-black text-white drop-shadow-lg tracking-tight">PLATINUM</h4>
                 <p className="text-2xl font-black text-emerald-300 mt-2">Rp 300 Juta</p>
               </div>
-              <ul className="space-y-4 text-[11px] text-emerald-100/90 flex-1 relative z-10">
-                <li className="flex gap-3 items-start"><Star className="w-4 h-4 text-amber-400 shrink-0 mt-0.5 drop-shadow-sm fill-amber-400/20"/> <span><strong>Naming Rights:</strong> Dominasi mutlak identitas acara (Misal: <em>"Sukabumi Showdown presented by [Brand]"</em>).</span></li>
-                <li className="flex gap-3 items-start"><Star className="w-4 h-4 text-amber-400 shrink-0 mt-0.5 drop-shadow-sm fill-amber-400/20"/> <span><strong>Media Dominance:</strong> Penayangan TVC komersial 60 detik selama jeda live-stream. Logo mendominasi videotron & panggung.</span></li>
-                <li className="flex gap-3 items-start"><Star className="w-4 h-4 text-amber-400 shrink-0 mt-0.5 drop-shadow-sm fill-amber-400/20"/> <span><strong>Venue Monopoly:</strong> Hak eksklusif mendirikan <em>booth</em> utama 5x5m di VVIP Area tanpa kehadiran <em>brand</em> kompetitor.</span></li>
-                <li className="flex gap-3 items-start"><Star className="w-4 h-4 text-amber-400 shrink-0 mt-0.5 drop-shadow-sm fill-amber-400/20"/> <span><strong>Ceremonial Prestige:</strong> Panggung kehormatan khusus bagi Direksi untuk menyerahkan trofi Juara 1 secara simbolis.</span></li>
+              <ul className="space-y-5 text-[11px] text-emerald-100/90 flex-1 relative z-10">
+                <li className="flex gap-3 items-start"><Star className="w-5 h-5 text-amber-400 shrink-0 drop-shadow-sm fill-amber-400/20"/> <span><strong>Naming Rights:</strong> Dominasi mutlak identitas acara (Misal: <em>&quot;Sukabumi Showdown presented by [Brand]&quot;</em>).</span></li>
+                <li className="flex gap-3 items-start"><Star className="w-5 h-5 text-amber-400 shrink-0 drop-shadow-sm fill-amber-400/20"/> <span><strong>Media Dominance:</strong> Penayangan TVC komersial 60 detik selama jeda live-stream. Logo mendominasi videotron & panggung.</span></li>
+                <li className="flex gap-3 items-start"><Star className="w-5 h-5 text-amber-400 shrink-0 drop-shadow-sm fill-amber-400/20"/> <span><strong>Venue Monopoly:</strong> Hak eksklusif mendirikan <em>booth</em> utama 5x5m di VVIP Area tanpa kehadiran <em>brand</em> kompetitor.</span></li>
+                <li className="flex gap-3 items-start"><Star className="w-5 h-5 text-amber-400 shrink-0 drop-shadow-sm fill-amber-400/20"/> <span><strong>Ceremonial Prestige:</strong> Panggung kehormatan khusus bagi Direksi untuk menyerahkan trofi Juara 1 secara simbolis.</span></li>
               </ul>
             </div>
 
             {/* GOLD */}
-            <div className="w-[30%] bg-gradient-to-b from-amber-50 to-white border border-amber-200 rounded-3xl p-5 shadow-md relative h-[85%] flex flex-col">
-              <div className="absolute top-0 right-0 w-16 h-16 bg-amber-400/20 rounded-bl-full pointer-events-none"></div>
-              <div className="text-center mb-4 border-b border-amber-200 pb-4 relative z-10">
+            <div className="w-[30%] bg-gradient-to-b from-amber-50 to-white border border-amber-200 rounded-3xl p-6 shadow-md relative flex flex-col h-[85%]">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-amber-400/10 rounded-bl-full pointer-events-none"></div>
+              <div className="text-center mb-5 border-b border-amber-200 pb-5 relative z-10">
                 <p className="text-xs font-bold text-amber-600 tracking-widest uppercase mb-1">Official Partner</p>
-                <h4 className="text-2xl font-black text-slate-800">GOLD</h4>
+                <h4 className="text-3xl font-black text-slate-800 tracking-tight">GOLD</h4>
                 <p className="text-xl font-black text-amber-700 mt-2">Rp 100 Juta</p>
               </div>
-              <ul className="space-y-4 text-[10px] text-slate-700 flex-1 overflow-y-auto pr-1 relative z-10">
-                <li className="flex gap-2 items-start"><Zap className="w-3 h-3 text-amber-500 shrink-0 mt-0.5 fill-amber-500/20"/> <span><strong>Visual Presence:</strong> Logo proporsional terpasang pada seluruh media cetak & baliho (Tier 2).</span></li>
-                <li className="flex gap-2 items-start"><Zap className="w-3 h-3 text-amber-500 shrink-0 mt-0.5 fill-amber-500/20"/> <span><strong>Digital Integration:</strong> Penyisipan logo <em>overlay</em> live streaming & 3x <em>Adlibs</em> oleh Caster.</span></li>
-                <li className="flex gap-2 items-start"><Zap className="w-3 h-3 text-amber-500 shrink-0 mt-0.5 fill-amber-500/20"/> <span><strong>Activation Space:</strong> Fasilitas gratis area <em>booth</em> komersial 3x3m di zona penonton strategis.</span></li>
-                <li className="flex gap-2 items-start"><Zap className="w-3 h-3 text-amber-500 shrink-0 mt-0.5 fill-amber-500/20"/> <span><strong>Merchandising:</strong> Akses menaruh produk/brosur fisik ke dalam 1.000 <em>goodie bag</em> VIP.</span></li>
+              <ul className="space-y-4 text-[10px] text-slate-700 flex-1 relative z-10">
+                <li className="flex gap-2 items-start"><Zap className="w-4 h-4 text-amber-500 shrink-0 fill-amber-500/20"/> <span><strong>Visual Presence:</strong> Logo proporsional terpasang pada media cetak & baliho (Tier 2).</span></li>
+                <li className="flex gap-2 items-start"><Zap className="w-4 h-4 text-amber-500 shrink-0 fill-amber-500/20"/> <span><strong>Digital Integration:</strong> Penyisipan logo <em>overlay</em> live streaming & 3x <em>Adlibs</em> oleh Caster.</span></li>
+                <li className="flex gap-2 items-start"><Zap className="w-4 h-4 text-amber-500 shrink-0 fill-amber-500/20"/> <span><strong>Activation Space:</strong> Fasilitas gratis area <em>booth</em> komersial 3x3m di zona strategis.</span></li>
+                <li className="flex gap-2 items-start"><Zap className="w-4 h-4 text-amber-500 shrink-0 fill-amber-500/20"/> <span><strong>Merchandising:</strong> Akses menyebarkan produk fisik ke dalam 1.000 <em>goodie bag</em> VIP.</span></li>
               </ul>
             </div>
 
           </div>
           
-          <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-center text-[10px] text-slate-500 flex items-center justify-center gap-2 mt-6">
-             <Info className="w-4 h-4 text-emerald-600" /> Paket di atas bersifat fleksibel (<em>Negotiable & Customized</em>) dan dapat disesuaikan mutlak dengan alokasi kampanye <em>marketing</em> Anda.
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center text-[11px] text-slate-600 flex items-center justify-center gap-3 mt-8 shadow-sm mx-auto w-full">
+             <Info className="w-5 h-5 text-emerald-600 shrink-0" /> 
+             <p>Paket di atas bersifat fleksibel (<strong>Negotiable & Customized</strong>) dan dapat disesuaikan mutlak dengan alokasi kampanye <em>marketing</em> Anda.</p>
           </div>
         </div>
       </PrintPage>
 
       {/* 27. Key Performance Indicators (KPI) */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 27" title="Key Performance Indicators (KPI)" />
+        <PageHeader chapter="HALAMAN 26" title="Key Performance Indicators (KPI)" />
         <div className="flex-1">
           <FormalTitle title="Key Performance Indicators (KPI)" icon={BarChart} />
           <p className="text-sm text-slate-700 text-justify mb-4 leading-relaxed">
@@ -1617,7 +2028,7 @@ export default function Proposal() {
 
       {/* 28. Struktur Kepanitiaan */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 28" title="Struktur Kepanitiaan" />
+        <PageHeader chapter="HALAMAN 27" title="Struktur Kepanitiaan" />
         <div className="flex-1">
           <FormalTitle title="Bagan Struktur Kepanitiaan Inti" icon={Users} />
           <div className="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm mt-4 text-sm text-slate-700">
@@ -1650,57 +2061,170 @@ export default function Proposal() {
 
       {/* 29. Dampak Ekonomi & Pemberdayaan */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 29" title="Dampak Ekonomi & Pemberdayaan" />
-        <div className="flex-1">
-          <FormalTitle title="Dampak Multiplier Ekonomi" icon={TrendingUp} />
-          <div className="prose prose-slate max-w-none text-sm text-slate-700 text-justify leading-relaxed">
-            <p>
-              Kami meyakini bahwa olahraga E-Sports tidak berdiri sendiri; ia layaknya lokomotif pendorong gerbong industri kreatif lainnya. Menyelenggarakan sebuah festival pameran akbar (Ekshibisi E-Sports) selama akhir pekan akan memicu perputaran roda finansial makro mikro bagi entitas masyarakat Kota Sukabumi (*Multiplier Effect*).
-            </p>
-            <ul>
-              <li><strong>Pemberdayaan Pelaku Usaha UMKM Kuliner:</strong> Hadirnya gelombang pengunjung dan panitia memicu lonjakan tingkat konsumsi makanan instan serta kopi olahan. Tersedianya kawasan *bazaar Food & Beverage* sengaja dibuat agar uang yang dikeluarkan penonton terus mengalir kepada pedagang kecil lokal, bukan perusahaan besar.</li>
-              <li><strong>Sektor Persewaan Infrastruktur & Komputerisasi Kreatif:</strong> Penyerapan jasa dari sektor pengusaha persewaan properti panggung (vendor lighting, sistem suara konser, perancah genset) hingga penyedia infrastruktur *Router Jaringan Fiber Optic* tingkat tinggi turut bergeliat kembali pasca masa jeda liburan.</li>
-              <li><strong>Pekerja Seni Sablon Kaos dan Desain Merchandise:</strong> Seluruh panitia dan perwakilan tim membutuhkan seragam khusus cetakan bordir dan desain seragam olahraga (*Jersey Gaming*). Belum terhitung order pembuatan hadiah-hadiah *merchandise* kunci (*lanyard*, stiker promosi, cetak baliho reklame), yang mana semuanya menggunakan jasa percetakan digital asli Sukabumi.</li>
-            </ul>
+        <PageHeader chapter="HALAMAN 28" title="Dampak Ekonomi & Pemberdayaan" />
+        <div className="flex-1 flex flex-col pt-4 pb-2">
+          
+          <div className="text-center mb-6">
+            <h3 className="text-3xl font-black text-slate-800 tracking-tight">MULTIPLIER EFFECT <span className="text-emerald-600">ECONOMY</span></h3>
+            <p className="text-sm text-slate-500 max-w-xl mx-auto mt-2">Kami meyakini bahwa olahraga E-Sports tidak berdiri sendiri; ia layaknya lokomotif pendorong gerbong industri kreatif lainnya. Menyelenggarakan pameran akbar ini akan memicu perputaran roda finansial makro dan mikro yang signifikan.</p>
           </div>
+
+          <div className="grid grid-cols-2 gap-4 mb-4">
+             {/* UMKM Kuliner */}
+             <div className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+                <div className="absolute -right-4 -top-4 w-24 h-24 bg-amber-500/10 rounded-full blur-xl pointer-events-none group-hover:bg-amber-500/20 transition-colors"></div>
+                <div className="flex items-start gap-4">
+                   <div className="w-10 h-10 bg-amber-50 rounded-2xl flex items-center justify-center shrink-0 border border-amber-100 mt-0.5">
+                      <Briefcase className="w-5 h-5 text-amber-600" />
+                   </div>
+                   <div>
+                      <h4 className="text-sm font-black text-slate-800 mb-1">Pemberdayaan UMKM Kuliner & F&B</h4>
+                      <p className="text-[10px] text-slate-600 leading-relaxed text-justify">
+                         Hadirnya gelombang ratusan pengunjung dan panitia selama akhir pekan memicu lonjakan tingkat konsumsi. Tersedianya kawasan khusus <em>Bazaar Food & Beverage</em> sengaja diatur agar arus perputaran uang tunai langsung mengalir deras kepada pedagang kecil lokal, menciptakan ekosistem untung bersama.
+                      </p>
+                   </div>
+                </div>
+             </div>
+
+             {/* Infrastruktur */}
+             <div className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+                <div className="absolute -right-4 -top-4 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl pointer-events-none group-hover:bg-emerald-500/20 transition-colors"></div>
+                <div className="flex items-start gap-4">
+                   <div className="w-10 h-10 bg-emerald-50 rounded-2xl flex items-center justify-center shrink-0 border border-emerald-100 mt-0.5">
+                      <Building className="w-5 h-5 text-emerald-600" />
+                   </div>
+                   <div>
+                      <h4 className="text-sm font-black text-slate-800 mb-1">Infrastruktur & Komputerisasi</h4>
+                      <p className="text-[10px] text-slate-600 leading-relaxed text-justify">
+                         Penyerapan jasa besar-besaran dari sektor pengusaha persewaan properti (<em>Vendor Lighting, Sound System Konser, Perancah Genset</em>) hingga penyedia instalasi jaringan internet lokal. Ekosistem kreatif ini turut bergeliat aktif pasca masa jeda yang panjang.
+                      </p>
+                   </div>
+                </div>
+             </div>
+
+             {/* Pekerja Seni */}
+             <div className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm relative overflow-hidden group hover:shadow-md transition-all col-span-2 flex items-center gap-5">
+                <div className="w-14 h-14 bg-slate-900 rounded-2xl flex items-center justify-center shrink-0 shadow-inner">
+                   <Layers className="w-6 h-6 text-emerald-400" />
+                </div>
+                <div>
+                   <h4 className="text-sm font-black text-slate-800 mb-1">Pekerja Seni, Konveksi & Percetakan Digital Lokal</h4>
+                   <p className="text-[10px] text-slate-600 leading-relaxed text-justify">
+                      Seluruh panitia dan perwakilan ke-64 tim membutuhkan pesanan khusus seperti cetakan sablon baju, desain jersey <em>gaming</em>, dan bordir seragam. Di luar itu, order pembuatan aset <em>merchandise</em> (lanyard, id card, baliho, stiker promosi, piala akrilik) seratus persen diserahkan kepada jasa percetakan kreatif asli Sukabumi, memberikan suntikan pendapatan langsung bagi industri kreatif grafis.
+                   </p>
+                </div>
+             </div>
+          </div>
+
+          <div className="bg-emerald-950 border-4 border-emerald-900 rounded-[2rem] p-6 shadow-xl relative overflow-hidden flex-1 flex flex-col justify-center items-center text-center">
+             <div className="absolute inset-0 bg-[url('/images/strategy_bg.png')] opacity-10 bg-cover bg-center"></div>
+             <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+             <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+             
+             <div className="relative z-10 w-full max-w-2xl mx-auto">
+                <div className="inline-block px-4 py-1.5 bg-emerald-900 text-emerald-300 text-[10px] font-black tracking-[0.2em] rounded-full mb-4 border border-emerald-700/50 uppercase shadow-sm">Nilai Strategis Sponsor</div>
+                <h4 className="text-2xl font-black text-white mb-3 leading-tight tracking-tight">Dukungan Anda Menghidupkan Rantai Ekonomi Daerah</h4>
+                <p className="text-xs text-emerald-100/80 leading-relaxed mb-6">
+                   Setiap rupiah dana <em>sponsorship</em> yang disuntikkan ke dalam turnamen ini tidak hanya berakhir pada panggung acara, melainkan terdistribusi kembali menjadi omzet bagi puluhan pengusaha kecil menengah di sekitar kita.
+                </p>
+                <div className="flex items-center justify-center gap-10">
+                   <div className="text-center">
+                      <div className="text-4xl font-black text-amber-400 drop-shadow-md">100%</div>
+                      <div className="text-[9px] font-bold text-emerald-300 tracking-widest uppercase mt-1">Vendor Lokal</div>
+                   </div>
+                   <div className="w-px h-10 bg-emerald-800"></div>
+                   <div className="text-center">
+                      <div className="text-4xl font-black text-amber-400 drop-shadow-md">64+</div>
+                      <div className="text-[9px] font-bold text-emerald-300 tracking-widest uppercase mt-1">Tim Peserta</div>
+                   </div>
+                   <div className="w-px h-10 bg-emerald-800"></div>
+                   <div className="text-center">
+                      <div className="text-4xl font-black text-amber-400 drop-shadow-md">300+</div>
+                      <div className="text-[9px] font-bold text-emerald-300 tracking-widest uppercase mt-1">Pengunjung</div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          
         </div>
       </PrintPage>
 
       {/* 30. Mitigasi Risiko & Penutup */}
       <PrintPage>
-        <PageHeader chapter="HALAMAN 30" title="Mitigasi Risiko & Penutup" />
-        <div className="flex-1">
-          <FormalTitle title="Mitigasi Insiden & Kesimpulan Akhir" icon={ShieldCheck} />
+        <PageHeader chapter="HALAMAN 29" title="Mitigasi Risiko & Penutup" />
+        <div className="flex-1 flex flex-col pt-4 pb-2">
           
-          <div className="bg-slate-50 border border-slate-200 p-4 rounded-xl shadow-sm mb-4">
-            <h4 className="text-sm font-bold text-slate-800 mb-2">Perencanaan Kelangsungan Acara (Mitigasi Bencana Teknis)</h4>
-            <p className="text-xs text-slate-600 leading-relaxed mb-2">Sebuah kegiatan yang menyedot listrik dan massa rawan terhambat teknis. Kami siap menghadapinya dengan perisai preventif:</p>
-            <ul className="text-xs text-slate-600 space-y-1 list-disc pl-4">
-              <li>Mencegah listrik anjlok, kami menempatkan mesin Generator Set di area lahan parkir yang dilengkapi sistem peralihan sirkuit cerdas. Jika aliran PLN putus, Genset menutupi daya dalam interval kedip detik.</li>
-              <li>Mencegah internet pemain tiba-tiba melambat (*ping delay* merah), disediakan 2 kabel instalasi penyedia pita lebar terpisah berkapasitas besar. Satu bertindak sebagai tumpuan utama, satunya siaga di latar belakang (*Redundancy Backup Internet*).</li>
-            </ul>
+          <div className="text-center mb-6">
+            <h3 className="text-3xl font-black text-slate-800 tracking-tight">RISK MITIGATION & <span className="text-emerald-600">CLOSING</span></h3>
+            <p className="text-sm text-slate-500 max-w-xl mx-auto mt-2">Perencanaan teknis tingkat tinggi (<em>Service Level Agreement</em>) untuk menjamin kelangsungan acara tanpa interupsi, sekaligus sebagai penutup dokumen proposal kemitraan ini.</p>
           </div>
 
-          <p className="text-sm text-slate-700 text-justify leading-relaxed mb-6 font-medium italic border-l-4 border-amber-500 pl-3">
-            "Keberanian mencetak sejarah bukan dilakukan seorang diri. Suksesnya pembangunan fondasi mentalitas kompetitif bagi pemuda Sukabumi via festival E-Sports ini membutuhkan sinergi kapital dan kebijaksanaan. Proposal dokumen acuan strategis ini kami sampaikan sebagai bahan komprehensif pertimbangan penanaman anggaran sponsor yang mulia dari pihak pimpinan Manajemen. Bersama, mari kita mewujudkan visi pemuda dari ranah hiburan ke arah industri gemilang masa depan."
-          </p>
+          <div className="grid grid-cols-2 gap-5 mb-8">
+             {/* Listrik */}
+             <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+                <div className="absolute -right-4 -top-4 w-24 h-24 bg-amber-500/10 rounded-full blur-xl pointer-events-none group-hover:bg-amber-500/20 transition-colors"></div>
+                <div className="flex gap-4 relative z-10">
+                   <div className="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center shrink-0 border border-amber-100 mt-0.5">
+                      <Zap className="w-6 h-6 text-amber-600" />
+                   </div>
+                   <div>
+                      <h4 className="text-sm font-black text-slate-800 mb-1.5">Redundansi Kelistrikan Genset</h4>
+                      <p className="text-[11px] text-slate-600 leading-relaxed text-justify">
+                         Mencegah listrik anjlok, kami menempatkan mesin <strong>Generator Set (Genset) Silent</strong> di area lahan parkir yang dilengkapi sistem peralihan sirkuit cerdas (ATS). Jika aliran PLN putus mendadak, Genset akan langsung menutupi beban daya dalam interval kedipan detik tanpa mematikan perangkat bertanding pemain.
+                      </p>
+                   </div>
+                </div>
+             </div>
 
-          <div className="bg-slate-900 rounded-2xl p-6 text-white border-b-4 border-amber-500 shadow-lg flex gap-6 items-center">
-            <Phone className="w-10 h-10 text-emerald-500 shrink-0" />
-            <div>
-              <h3 className="text-sm font-bold text-amber-400 mb-2 uppercase tracking-wider">Pusat Konfirmasi & Kemitraan (Narahubung)</h3>
-              <div className="grid grid-cols-2 gap-4 text-xs text-slate-300">
-                <div>
-                  <p>Saluran WhatsApp (Negosiasi Langsung):</p>
-                  <p className="font-bold text-sm text-white mt-0.5">0812-3456-7890 (Drefan / Project Manager)</p>
+             {/* Internet */}
+             <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+                <div className="absolute -right-4 -top-4 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl pointer-events-none group-hover:bg-emerald-500/20 transition-colors"></div>
+                <div className="flex gap-4 relative z-10">
+                   <div className="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center shrink-0 border border-emerald-100 mt-0.5">
+                      <ShieldCheck className="w-6 h-6 text-emerald-600" />
+                   </div>
+                   <div>
+                      <h4 className="text-sm font-black text-slate-800 mb-1.5">Dual-Line Fiber Optic Network</h4>
+                      <p className="text-[11px] text-slate-600 leading-relaxed text-justify">
+                         Mencegah koneksi internet pemain melambat (<em>ping delay</em>), kami menyediakan <strong>2 tarikan kabel instalasi pita lebar (Fiber Optic)</strong> dari penyedia ISP berbeda. Satu bertindak sebagai tulang punggung utama (<em>Main Line</em>), satunya bersiaga aktif di latar belakang (<em>Failover Redundancy Backup</em>).
+                      </p>
+                   </div>
                 </div>
-                <div>
-                  <p>Surat Menyurat Resmi Perusahaan (Email):</p>
-                  <p className="font-bold text-sm text-white mt-0.5">partnership@sukabumi-esports.id</p>
-                </div>
-              </div>
-            </div>
+             </div>
           </div>
+
+          <div className="flex-1 relative flex flex-col items-center justify-center px-10 text-center mb-8">
+             <div className="text-6xl text-amber-200 font-serif absolute top-0 left-6 opacity-60 pointer-events-none">&quot;</div>
+             <p className="text-sm text-slate-700 leading-relaxed font-medium italic relative z-10 px-8">
+                Keberanian mencetak sejarah bukan dilakukan seorang diri. Suksesnya pembangunan fondasi mentalitas kompetitif bagi pemuda Sukabumi via festival E-Sports ini membutuhkan sinergi kapital dan kebijaksanaan. Proposal dokumen acuan strategis ini kami sampaikan sebagai bahan komprehensif pertimbangan penanaman anggaran sponsor yang mulia dari pihak pimpinan Manajemen. Bersama, mari kita mewujudkan visi pemuda dari ranah sekadar hiburan, melesat ke arah industri digital yang gemilang di masa depan.
+             </p>
+             <div className="text-6xl text-amber-200 font-serif absolute bottom-[-30px] right-6 opacity-60 pointer-events-none">&quot;</div>
+          </div>
+
+          <div className="bg-slate-900 border-t-4 border-amber-500 rounded-[2rem] p-6 shadow-2xl relative overflow-hidden flex items-center gap-6 group hover:bg-slate-800 transition-colors mt-auto">
+             <div className="absolute right-0 top-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+             
+             <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center shrink-0 border border-slate-700 shadow-inner group-hover:scale-105 transition-transform">
+                <Phone className="w-8 h-8 text-emerald-400" />
+             </div>
+             
+             <div className="flex-1 relative z-10">
+                <div className="inline-block px-3 py-1 bg-emerald-900 text-emerald-300 text-[9px] font-black tracking-[0.2em] rounded-full mb-2.5 uppercase border border-emerald-800">
+                   Pusat Konfirmasi & Kemitraan Klien
+                </div>
+                <div className="grid grid-cols-2 gap-6">
+                   <div>
+                      <p className="text-[10px] text-slate-400 mb-0.5">Saluran Negosiasi Cepat (WhatsApp):</p>
+                      <p className="text-sm font-black text-white tracking-wide">0812-3456-7890 <span className="text-amber-400 text-xs font-medium ml-1">(Drefan)</span></p>
+                   </div>
+                   <div>
+                      <p className="text-[10px] text-slate-400 mb-0.5">Surat Menyurat Resmi (Email):</p>
+                      <p className="text-sm font-black text-white tracking-wide">partnership@sukabumi-esports.id</p>
+                   </div>
+                </div>
+             </div>
+          </div>
+
         </div>
       </PrintPage>
       
@@ -1710,7 +2234,7 @@ export default function Proposal() {
         <div className="flex-1">
           <FormalTitle title="RAB Bagian 1: Prize Pool & Perizinan" icon={Coins} />
           <p className="text-sm text-slate-700 text-justify mb-4 leading-relaxed">
-            Kalkulasi rincian estimasi biaya acara "Clash of Champions: Sukabumi Showdown" dibagi menjadi empat bagian (Lampiran 1-4). Bagian pertama berfokus pada penghargaan atlet dan administrasi legalitas tempat:
+            Kalkulasi rincian estimasi biaya acara &quot;Clash of Champions: Sukabumi Showdown&quot; dibagi menjadi empat bagian (Lampiran 1-4). Bagian pertama berfokus pada penghargaan atlet dan administrasi legalitas tempat:
           </p>
           <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm text-[11px] text-slate-700 w-full">
             <table className="w-full text-left">

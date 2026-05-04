@@ -24,6 +24,11 @@ body {
     size: A4;
     margin: 0mm;
   }
+  * {
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+  }
   body {
     background: white;
     -webkit-print-color-adjust: exact;
